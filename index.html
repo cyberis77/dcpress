@@ -9,27 +9,71 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles/main.css" />
 
   <link rel="icon" href="/assets/favicon.png" />
 </head>
 <body class="bg-black text-white antialiased">
 
-  <main class="relative h-screen flex items-center justify-center px-6">
-    <!-- Background image -->
-    <img src="assets/hero.jpg" alt="Athlete action" class="absolute inset-0 w-full h-full object-cover -z-10 filter brightness-50">
+  <main class="relative">
+    <!-- HERO -->
+    <section class="relative h-screen flex items-center justify-center px-6">
+      <img src="assets/hero.jpg" alt="Athlete action" class="absolute inset-0 w-full h-full object-cover -z-10 filter brightness-50">
 
-    <!-- Overlay content -->
-    <div class="relative text-center max-w-2xl space-y-6">
-      <h1 class="text-5xl md:text-6xl font-playfair font-bold tracking-tight drop-shadow-lg">DC Press</h1>
-      <p class="text-lg md:text-xl text-gray-300">Premium sports photography. Login to access the portfolio.</p>
-      <a href="login.html" class="inline-block bg-white text-black font-semibold px-8 py-3 rounded-md hover:opacity-90 transition">Login</a>
-    </div>
+      <div class="relative text-center max-w-2xl space-y-6">
+        <h1 class="text-5xl md:text-6xl font-playfair font-bold tracking-tight drop-shadow-lg">DC Press</h1>
+        <p class="text-lg md:text-xl text-gray-300">Premium sports photography. Login to access our editorial portfolio.</p>
+        <a href="login.html" class="inline-block bg-white text-black font-semibold px-8 py-3 rounded-md hover:opacity-90 transition">Login</a>
+      </div>
+    </section>
 
-    <!-- Optional footer -->
-    <footer class="absolute bottom-6 w-full text-center text-gray-400 text-sm">
+    <!-- CREDIBILITY GRID -->
+    <section class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center mb-12">What we capture</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- placeholder / blurred images to show professionalism without revealing -->
+        <div class="relative overflow-hidden rounded-xl shadow-lg">
+          <img src="assets/work1.jpg" class="w-full h-48 object-cover filter grayscale blur-sm" alt="">
+          <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-sm text-white uppercase tracking-widest">Login to view</div>
+        </div>
+        <div class="relative overflow-hidden rounded-xl shadow-lg">
+          <img src="assets/work2.jpg" class="w-full h-48 object-cover filter grayscale blur-sm" alt="">
+          <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-sm text-white uppercase tracking-widest">Login to view</div>
+        </div>
+        <div class="relative overflow-hidden rounded-xl shadow-lg">
+          <img src="assets/work3.jpg" class="w-full h-48 object-cover filter grayscale blur-sm" alt="">
+          <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-sm text-white uppercase tracking-widest">Login to view</div>
+        </div>
+        <div class="relative overflow-hidden rounded-xl shadow-lg">
+          <img src="assets/work4.jpg" class="w-full h-48 object-cover filter grayscale blur-sm" alt="">
+          <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-sm text-white uppercase tracking-widest">Login to view</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUSTED BY -->
+    <section class="bg-gray-50 py-12">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center">
+        <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-6">Trusted by</h4>
+        <div class="grid grid-cols-3 sm:grid-cols-6 gap-6 items-center">
+          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=BBC" alt="BBC logo"> </div>
+          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=ESPN" alt="ESPN logo"> </div>
+          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=NYT" alt="NYT logo"> </div>
+          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=AD" alt="AD logo"> </div>
+          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=VAR" alt="VAR logo"> </div>
+          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=FOOTY" alt="Footy logo"> </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT / MISSION -->
+    <section class="max-w-5xl mx-auto px-6 lg:px-8 py-16 text-center text-gray-300">
+      <h3 class="text-3xl font-semibold mb-4">About DC Press</h3>
+      <p class="text-lg md:text-xl">We are a team of professional sports photographers and creative directors. Our work delivers editorial-grade imagery for publishers, media, and brands worldwide. Login to explore our full portfolio.</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-100 py-6 text-center text-gray-400 text-sm">
       &copy; <span id="year"></span> DC Press
     </footer>
   </main>
