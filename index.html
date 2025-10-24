@@ -1,109 +1,217 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Metadata -->
-  <meta charset="utf-8">
-  <meta name="keywords" content="sports photography, agency, professional, photojournalism, portfolio">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="robots" content="index, follow">
-  <title>ProMotion Sports Photography | Capturing the Spirit of Sport</title>
-  <link rel="shortcut icon" type="image/png" href="favicon.png">
-  <!-- Metadata END -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="DC Press — premium sports photography agency. Editorial & commercial sports imagery, fast delivery, global coverage." />
+  <title>DC Press — Sports Photography</title>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/animate.min.css">
-  <link rel="stylesheet" href="./css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <!-- Stylesheets END -->
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Inter & Playfair for refined typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles/main.css" />
+
+  <!-- Favicons (replace favicon.png with your file) -->
+  <link rel="icon" href="/assets/favicon.png" />
 </head>
+<body class="bg-white text-gray-900 antialiased">
 
-<body>
-  <!-- Preloader -->
-  <div id="page-loading-blocs-notifaction" class="page-preloader"></div>
+  <!-- Nav -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-white/60 backdrop-blur-sm border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a class="inline-flex items-end gap-3" href="#">
+          <!-- Brand mark -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" class="text-black" aria-hidden>
+            <rect x="2" y="3" width="20" height="18" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
+            <path d="M6 15h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+          </svg>
+          <span class="font-semibold tracking-tight text-lg">DC Press</span>
+        </a>
 
-  <!-- Main container -->
-  <div class="page-container">
-
-    <!-- HERO SECTION -->
-    <section id="hero" class="bloc bloc-fill-screen d-flex align-items-center justify-content-center text-center text-white position-relative"
-      style="background-image: url('https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
-      <div class="overlay"></div>
-      <div class="container position-relative z-2">
-        <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
-          <a class="navbar-brand fw-bold fs-3" href="#">ProMotion</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-            <ul class="navbar-nav text-uppercase">
-              <li class="nav-item"><a href="#hero" class="nav-link">Home</a></li>
-              <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-              <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-              <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
-            </ul>
-          </div>
+        <nav class="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
+          <a href="#work" class="nav-link">Work</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#clients" class="nav-link">Clients</a>
+          <a href="login.html" class="nav-link">Login</a>
         </nav>
 
-        <div class="mt-5 pt-5">
-          <h1 class="display-4 fw-bold mb-3 animate__animated animate__fadeInDown">Capturing the Spirit of Sport</h1>
-          <p class="lead mb-4 text-light animate__animated animate__fadeInUp animate__delay-1s">
-            Elite moments. Timeless imagery. Trusted by champions.
-          </p>
-          <a href="#portfolio" class="btn btn-light btn-lg fw-semibold rounded-pill animate__animated animate__fadeInUp animate__delay-2s">View Portfolio</a>
+        <div class="md:hidden">
+          <button id="mobile-open" aria-label="Open menu" class="p-2 rounded-md hover:bg-gray-100">
+            <!-- hamburger -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
         </div>
       </div>
-      <div class="scroll-down text-center position-absolute bottom-0 w-100 pb-4">
-        <a href="#portfolio" class="text-white">
-          <i class="fa fa-angle-down fa-2x bounce"></i>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100">
+      <div class="px-6 pt-4 pb-6 space-y-3">
+        <a href="#work" class="block font-medium">Work</a>
+        <a href="#about" class="block font-medium">About</a>
+        <a href="#clients" class="block font-medium">Clients</a>
+        <a href="login.html" class="block font-medium">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-16">
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="relative h-[78vh] lg:h-[86vh]">
+        <!-- Background image -->
+        <img src="assets/hero.jpg" alt="Athlete action" class="absolute inset-0 w-full h-full object-cover -z-10" />
+
+        <!-- Soft gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-white/0 -z-5"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full flex items-center">
+          <div class="max-w-3xl">
+            <p class="inline-block bg-black/70 text-white text-xs uppercase tracking-wider px-3 py-1 rounded-full mb-6">Editorial &amp; Sports</p>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-playfair leading-tight text-white drop-shadow-xl mb-6">
+              Moments that define sport.
+            </h1>
+            <p class="text-lg text-white/90 mb-8">DC Press partners with media and brands to deliver editorial-caliber sports imagery — fast, reliable, and cinematic.</p>
+
+            <div class="flex flex-wrap gap-4">
+              <a href="#work" class="inline-flex items-center justify-center rounded-md bg-white text-black px-6 py-3 font-semibold shadow hover:shadow-lg transition">View Work</a>
+              <a href="#about" class="inline-flex items-center justify-center rounded-md border border-white/20 text-white px-5 py-3 hover:bg-white/5 transition">About us</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- subtle bottom wave -->
+        <svg class="absolute bottom-0 left-0 right-0" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h1440v70H0z" fill="white"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Featured Work grid -->
+    <section id="work" class="max-w-7xl mx-auto px-6 lg:px-8 -mt-6">
+      <div class="bg-white rounded-xl shadow-xl px-6 py-10">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-2xl font-semibold">Selected Work</h2>
+            <p class="text-sm text-gray-500">A handpicked selection of editorial and commercial shoots.</p>
+          </div>
+          <div class="hidden sm:flex gap-3">
+            <button class="text-sm px-4 py-2 border rounded-md text-gray-600 hover:bg-gray-50">Editorial</button>
+            <button class="text-sm px-4 py-2 border rounded-md text-gray-600 hover:bg-gray-50">Commercial</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <figure class="group relative overflow-hidden rounded-xl">
+            <img class="w-full h-72 object-cover transition-transform group-hover:scale-105" src="assets/work1.jpg" alt="Work 1">
+            <figcaption class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/40 to-transparent">
+              <div class="text-white">
+                <div class="text-sm font-medium">Championship Final</div>
+                <div class="text-xs text-white/80">Photographer: Ana Costa</div>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="group relative overflow-hidden rounded-xl">
+            <img class="w-full h-72 object-cover transition-transform group-hover:scale-105" src="assets/work2.jpg" alt="Work 2">
+            <figcaption class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/40 to-transparent">
+              <div class="text-white">
+                <div class="text-sm font-medium">Sprint Series</div>
+                <div class="text-xs text-white/80">Photographer: Marco Silva</div>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="group relative overflow-hidden rounded-xl">
+            <img class="w-full h-72 object-cover transition-transform group-hover:scale-105" src="assets/work3.jpg" alt="Work 3">
+            <figcaption class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/40 to-transparent">
+              <div class="text-white">
+                <div class="text-sm font-medium">Victory Portrait</div>
+                <div class="text-xs text-white/80">Photographer: Rui Mendes</div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="mt-8 text-center">
+          <a href="#" class="inline-block text-sm font-semibold border px-5 py-3 rounded-md hover:bg-gray-50 transition">See Full Portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="max-w-5xl mx-auto px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h3 class="text-3xl font-semibold mb-4">DC Press — Sports, editorial, storytelling</h3>
+          <p class="text-gray-600 mb-6">We are a small team of photojournalists and creative directors with global coverage — working with publishers, brands and teams to produce high-impact imagery and rapid delivery workflows.</p>
+
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-gray-900 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div><strong>Fast turnaround</strong> — editorial pipelines and FTP delivery.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-gray-900 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div><strong>Global coverage</strong> — trusted field photographers worldwide.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-gray-900 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18" stroke-width="1.2" stroke-linecap="round"/></svg>
+              <div><strong>Custom licensing</strong> — editorial and commercial rights tailored to your needs.</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow">
+          <img src="assets/work2.jpg" alt="About image" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients / Logos -->
+    <section id="clients" class="bg-gray-50 py-12">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center">
+        <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-6">Trusted by</h4>
+        <div class="grid grid-cols-3 sm:grid-cols-6 gap-6 items-center">
+          <!-- Use SVG logos or images in production -->
+          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=BBC" alt="BBC logo"> </div>
+          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=ESPN" alt="ESPN logo"> </div>
+          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=FOOTY" alt="Footy logo"> </div>
+          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=NYT" alt="NYT logo"> </div>
+          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=AD" alt="AD logo"> </div>
+          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=VAR" alt="VAR logo"> </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-gray-600">&copy; <span id="year"></span> DC Press — All rights reserved.</div>
+      <div class="flex items-center gap-4">
+        <!-- social icons -->
+        <a class="text-gray-600 hover:text-gray-900" href="#" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.2"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+        </a>
+        <a class="text-gray-600 hover:text-gray-900" href="#" aria-label="Twitter">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M23 4.5c-.8.4-1.7.6-2.6.8.9-.5 1.6-1.4 1.9-2.4-.9.6-1.9 1-3 1.2C18 3 16.7 2.5 15.3 2.5c-2.5 0-4.5 2.1-4.5 4.6 0 .4 0 .8.1 1.1C7.8 8 4.1 6.2 1.8 3.2c-.4.8-.6 1.7-.6 2.7 0 1.6.8 3 2 3.8-.7 0-1.3-.2-1.8-.5 0 2.2 1.5 4.1 3.6 4.5-.5.1-1.1.2-1.7.2-.4 0-.8 0-1.2-.1.8 2.3 3 3.9 5.6 3.9-2 1.5-4.5 2.4-7.2 2.4-.5 0-1 0-1.4-.1 2.6 1.7 5.7 2.7 9 2.7 10.8 0 16.8-9 16.8-16.8V6c1.2-.9 2.2-2 3-3.2z" stroke="currentColor" stroke-width="0.6"/></svg>
+        </a>
+        <a class="text-gray-600 hover:text-gray-900" href="#" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M8 11v6M8 8v.01M12 11v6M16 11v6M8 11c0-1.7 2.2-1.7 2.2 0" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/></svg>
         </a>
       </div>
-    </section>
+    </div>
+  </footer>
 
-    <!-- PORTFOLIO SECTION -->
-    <section id="portfolio" class="py-5 bg-dark text-white">
-      <div class="container text-center">
-        <h2 class="fw-bold mb-5">Featured Work</h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <img src="img/sample1.jpg" class="img-fluid rounded shadow-sm" alt="Sports action 1">
-          </div>
-          <div class="col-md-4">
-            <img src="img/sample2.jpg" class="img-fluid rounded shadow-sm" alt="Sports action 2">
-          </div>
-          <div class="col-md-4">
-            <img src="img/sample3.jpg" class="img-fluid rounded shadow-sm" alt="Sports action 3">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about" class="py-5 bg-black text-center text-light">
-      <div class="container">
-        <h2 class="fw-bold mb-4">About Us</h2>
-        <p class="lead mx-auto" style="max-width: 700px;">
-          ProMotion is a premier sports photography agency capturing the raw power and emotion of competition.  
-          From grassroots fields to world stages, our photographers deliver excellence and artistry in every frame.
-        </p>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-dark text-center text-secondary py-4">
-      <div class="mb-3">
-        <a href="#" class="text-secondary mx-3 hover-light"><i class="fab fa-instagram fa-lg"></i></a>
-        <a href="#" class="text-secondary mx-3 hover-light"><i class="fab fa-twitter fa-lg"></i></a>
-        <a href="#" class="text-secondary mx-3 hover-light"><i class="fab fa-linkedin fa-lg"></i></a>
-      </div>
-      <p class="mb-0">&copy; <span id="year"></span> ProMotion Sports Photography. All rights reserved.</p>
-    </footer>
-  </div>
-
-  <!-- Scripts -->
-  <script src="./js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="scripts/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
