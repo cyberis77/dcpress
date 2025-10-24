@@ -1,30 +1,41 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login | ProMotion</title>
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — DC Press</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
-<body class="bg-black text-white d-flex align-items-center justify-content-center vh-100">
-  <div class="bg-dark p-5 rounded shadow-lg" style="width: 360px;">
-    <h2 class="text-center fw-bold mb-4">Login</h2>
-    <form>
-      <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-control bg-secondary text-white border-0" placeholder="you@example.com">
+<body class="min-h-screen bg-gray-50 flex items-center justify-center">
+  <div class="max-w-md w-full bg-white rounded-2xl shadow-xl p-8">
+    <div class="mb-6 text-center">
+      <div class="inline-flex items-center gap-3">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden><rect x="2" y="3" width="20" height="18" rx="3" stroke="currentColor" stroke-width="1.5"></rect></svg>
+        <span class="text-xl font-semibold">DC Press</span>
       </div>
-      <div class="mb-4">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-control bg-secondary text-white border-0" placeholder="********">
+    </div>
+
+    <h2 class="text-2xl font-semibold mb-2">Sign in</h2>
+    <p class="text-sm text-gray-500 mb-6">Access the editorial dashboard and image deliveries.</p>
+
+    <form onsubmit="event.preventDefault(); alert('Mock sign-in — implement your auth');">
+      <label class="block text-xs font-medium text-gray-700">Email</label>
+      <input type="email" required class="mt-2 mb-4 w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200" placeholder="you@domain.com" />
+
+      <label class="block text-xs font-medium text-gray-700">Password</label>
+      <input type="password" required class="mt-2 mb-4 w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200" placeholder="••••••••" />
+
+      <div class="flex items-center justify-between mb-6 text-sm">
+        <label class="inline-flex items-center gap-2"><input type="checkbox" class="w-4 h-4"/> Remember</label>
+        <a href="#" class="text-gray-600 hover:underline">Forgot?</a>
       </div>
-      <button class="btn btn-light w-100 fw-semibold">Sign In</button>
+
+      <button class="w-full bg-black text-white py-3 rounded-lg font-semibold hover:opacity-95 transition">Sign in</button>
     </form>
-    <p class="text-center text-muted mt-3 mb-0">&copy; <span id="year"></span> ProMotion</p>
+
+    <p class="mt-6 text-xs text-gray-400 text-center">This is a mock login page — add backend auth later.</p>
   </div>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
