@@ -499,3 +499,16 @@ img { display:block; max-width:100%; }
   .font-playfair { letter-spacing: -0.02em; }
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Optional shadow for text readability over hero */
+.drop-shadow-lg {
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
