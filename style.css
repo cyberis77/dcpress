@@ -61,10 +61,3 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-
-
-/* --- Other --- */
-/* Sets the current year in the footer */
-#year::before {
-  content: '2025'; /* Fallback, will be replaced by JS */
-}
