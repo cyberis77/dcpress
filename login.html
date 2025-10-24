@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | ProMotion</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-white d-flex align-items-center justify-content-center vh-100">
+  <div class="bg-dark p-5 rounded shadow-lg" style="width: 360px;">
+    <h2 class="text-center fw-bold mb-4">Login</h2>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control bg-secondary text-white border-0" placeholder="you@example.com">
+      </div>
+      <div class="mb-4">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control bg-secondary text-white border-0" placeholder="********">
+      </div>
+      <button class="btn btn-light w-100 fw-semibold">Sign In</button>
+    </form>
+    <p class="text-center text-muted mt-3 mb-0">&copy; <span id="year"></span> ProMotion</p>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
