@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -9,24 +9,25 @@
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Inter & Playfair for refined typography -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Custom styles -->
   <link rel="stylesheet" href="styles/main.css" />
 
-  <!-- Favicons (replace favicon.png with your file) -->
+  <!-- Favicon (replace with your file) -->
   <link rel="icon" href="/assets/favicon.png" />
 </head>
 <body class="bg-white text-gray-900 antialiased">
 
-  <!-- Nav -->
-  <header class="fixed top-0 left-0 right-0 z-40 bg-white/60 backdrop-blur-sm border-b border-gray-100">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-white/70 backdrop-blur-sm border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <a class="inline-flex items-end gap-3" href="#">
-          <!-- Brand mark -->
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" class="text-black" aria-hidden>
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" class="text-black" aria-hidden="true">
             <rect x="2" y="3" width="20" height="18" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
             <path d="M6 15h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
           </svg>
@@ -41,9 +42,8 @@
         </nav>
 
         <div class="md:hidden">
-          <button id="mobile-open" aria-label="Open menu" class="p-2 rounded-md hover:bg-gray-100">
-            <!-- hamburger -->
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <button id="mobile-menu-button" aria-label="Open menu" class="p-2 rounded-md hover:bg-gray-100">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </button>
@@ -51,8 +51,8 @@
       </div>
     </div>
 
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100">
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100">
       <div class="px-6 pt-4 pb-6 space-y-3">
         <a href="#work" class="block font-medium">Work</a>
         <a href="#about" class="block font-medium">About</a>
@@ -64,129 +64,105 @@
 
   <main class="pt-16">
     <!-- Hero -->
-    <section class="relative overflow-hidden">
-      <div class="relative h-[78vh] lg:h-[86vh]">
-        <!-- Background image -->
-        <img src="assets/hero.jpg" alt="Athlete action" class="absolute inset-0 w-full h-full object-cover -z-10" />
-
-        <!-- Soft gradient overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-white/0 -z-5"></div>
-
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full flex items-center">
-          <div class="max-w-3xl">
-            <p class="inline-block bg-black/70 text-white text-xs uppercase tracking-wider px-3 py-1 rounded-full mb-6">Editorial &amp; Sports</p>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-playfair leading-tight text-white drop-shadow-xl mb-6">
-              Moments that define sport.
-            </h1>
-            <p class="text-lg text-white/90 mb-8">DC Press partners with media and brands to deliver editorial-caliber sports imagery — fast, reliable, and cinematic.</p>
-
-            <div class="flex flex-wrap gap-4">
-              <a href="#work" class="inline-flex items-center justify-center rounded-md bg-white text-black px-6 py-3 font-semibold shadow hover:shadow-lg transition">View Work</a>
-              <a href="#about" class="inline-flex items-center justify-center rounded-md border border-white/20 text-white px-5 py-3 hover:bg-white/5 transition">About us</a>
-            </div>
+    <section class="relative h-[80vh] lg:h-[90vh] flex items-center">
+      <div class="absolute inset-0 w-full h-full -z-10">
+        <img src="assets/hero.jpg" alt="Athlete sprinting on a track" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 text-white">
+        <div class="max-w-3xl" data-animate>
+          <p class="inline-block bg-black/70 text-white text-xs uppercase tracking-wider px-3 py-1 rounded-full mb-6">Editorial &amp; Commercial Sports</p>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-playfair leading-tight drop-shadow-xl mb-6">
+            Moments That Define Sport.
+          </h1>
+          <p class="text-lg text-white/90 drop-shadow-lg mb-8">DC Press partners with media and brands to deliver editorial-caliber sports imagery — fast, reliable, and cinematic.</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#work" class="inline-flex items-center justify-center rounded-md bg-white text-black px-6 py-3 font-semibold shadow-lg hover:bg-gray-200 transition">View Work</a>
+            <a href="#about" class="inline-flex items-center justify-center rounded-md border border-white/40 text-white px-5 py-3 hover:bg-white/10 transition">About Us</a>
           </div>
         </div>
-
-        <!-- subtle bottom wave -->
-        <svg class="absolute bottom-0 left-0 right-0" viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0h1440v70H0z" fill="white"></path>
-        </svg>
       </div>
     </section>
 
-    <!-- Featured Work grid -->
-    <section id="work" class="max-w-7xl mx-auto px-6 lg:px-8 -mt-6">
-      <div class="bg-white rounded-xl shadow-xl px-6 py-10">
-        <div class="flex items-center justify-between mb-8">
-          <div>
-            <h2 class="text-2xl font-semibold">Selected Work</h2>
-            <p class="text-sm text-gray-500">A handpicked selection of editorial and commercial shoots.</p>
-          </div>
-          <div class="hidden sm:flex gap-3">
-            <button class="text-sm px-4 py-2 border rounded-md text-gray-600 hover:bg-gray-50">Editorial</button>
-            <button class="text-sm px-4 py-2 border rounded-md text-gray-600 hover:bg-gray-50">Commercial</button>
-          </div>
+    <!-- Featured Work -->
+    <section id="work" class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8" data-animate>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-semibold tracking-tight">Selected Work</h2>
+          <p class="text-md text-gray-500 mt-1">A handpicked selection from recent shoots.</p>
         </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          <figure class="group relative overflow-hidden rounded-xl">
-            <img class="w-full h-72 object-cover transition-transform group-hover:scale-105" src="assets/work1.jpg" alt="Work 1">
-            <figcaption class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/40 to-transparent">
-              <div class="text-white">
-                <div class="text-sm font-medium">Championship Final</div>
-                <div class="text-xs text-white/80">Photographer: Ana Costa</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <figure class="group relative overflow-hidden rounded-xl shadow-lg">
+            <img class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" src="assets/work1.jpg" alt="Championship Final">
+            <figcaption class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/70 to-transparent">
+              <div class="text-white transform transition-transform duration-300 group-hover:-translate-y-2">
+                <div class="font-semibold">Championship Final</div>
+                <div class="text-sm text-white/80">Photographer: Ana Costa</div>
               </div>
             </figcaption>
           </figure>
-
-          <figure class="group relative overflow-hidden rounded-xl">
-            <img class="w-full h-72 object-cover transition-transform group-hover:scale-105" src="assets/work2.jpg" alt="Work 2">
-            <figcaption class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/40 to-transparent">
-              <div class="text-white">
-                <div class="text-sm font-medium">Sprint Series</div>
-                <div class="text-xs text-white/80">Photographer: Marco Silva</div>
+          <figure class="group relative overflow-hidden rounded-xl shadow-lg">
+            <img class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" src="assets/work2.jpg" alt="Sprint Series">
+            <figcaption class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/70 to-transparent">
+              <div class="text-white transform transition-transform duration-300 group-hover:-translate-y-2">
+                <div class="font-semibold">Sprint Series</div>
+                <div class="text-sm text-white/80">Photographer: Marco Silva</div>
               </div>
             </figcaption>
           </figure>
-
-          <figure class="group relative overflow-hidden rounded-xl">
-            <img class="w-full h-72 object-cover transition-transform group-hover:scale-105" src="assets/work3.jpg" alt="Work 3">
-            <figcaption class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/40 to-transparent">
-              <div class="text-white">
-                <div class="text-sm font-medium">Victory Portrait</div>
-                <div class="text-xs text-white/80">Photographer: Rui Mendes</div>
+          <figure class="group relative overflow-hidden rounded-xl shadow-lg">
+            <img class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" src="assets/work3.jpg" alt="Victory Portrait">
+            <figcaption class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/70 to-transparent">
+              <div class="text-white transform transition-transform duration-300 group-hover:-translate-y-2">
+                <div class="font-semibold">Victory Portrait</div>
+                <div class="text-sm text-white/80">Photographer: Rui Mendes</div>
               </div>
             </figcaption>
           </figure>
         </div>
-
-        <div class="mt-8 text-center">
-          <a href="#" class="inline-block text-sm font-semibold border px-5 py-3 rounded-md hover:bg-gray-50 transition">See Full Portfolio</a>
+        <div class="mt-12 text-center">
+          <a href="login.html" class="inline-flex items-center gap-2 text-md font-semibold bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition shadow-md">
+            Client Access & Full Portfolio
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- About -->
-    <section id="about" class="max-w-5xl mx-auto px-6 lg:px-8 py-16">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+    <section id="about" class="py-20">
+      <div class="max-w-5xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-animate>
         <div>
-          <h3 class="text-3xl font-semibold mb-4">DC Press — Sports, editorial, storytelling</h3>
-          <p class="text-gray-600 mb-6">We are a small team of photojournalists and creative directors with global coverage — working with publishers, brands and teams to produce high-impact imagery and rapid delivery workflows.</p>
-
-          <ul class="space-y-3 text-gray-700">
+          <h3 class="text-3xl font-semibold mb-4">Editorial Storytelling, Delivered Fast.</h3>
+          <p class="text-gray-600 mb-6">We are a dedicated team of photojournalists with global coverage — working with publishers, brands, and teams to produce high-impact imagery and rapid delivery workflows.</p>
+          <ul class="space-y-4 text-gray-700">
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-gray-900 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <div><strong>Fast turnaround</strong> — editorial pipelines and FTP delivery.</div>
+              <svg class="w-6 h-6 text-black mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/></svg>
+              <div><strong>Fast Turnaround:</strong> Editorial pipelines and direct FTP delivery ensure you get the shots you need, when you need them.</div>
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-gray-900 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <div><strong>Global coverage</strong> — trusted field photographers worldwide.</div>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-gray-900 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18" stroke-width="1.2" stroke-linecap="round"/></svg>
-              <div><strong>Custom licensing</strong> — editorial and commercial rights tailored to your needs.</div>
+              <svg class="w-6 h-6 text-black mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.22 12h17.56M12 21.35V2.65C15.45 4.5 17.5 7.9 17.5 12c0 4.1-2.05 7.5-5.5 9.35z"/></svg>
+              <div><strong>Global Coverage:</strong> Our network of trusted field photographers covers major sporting events worldwide.</div>
             </li>
           </ul>
         </div>
-
-        <div class="rounded-xl overflow-hidden shadow">
-          <img src="assets/work2.jpg" alt="About image" class="w-full h-full object-cover">
+        <div class="rounded-xl overflow-hidden shadow-2xl">
+          <img src="assets/work2.jpg" alt="Photographer in action" class="w-full h-full object-cover">
         </div>
       </div>
     </section>
 
-    <!-- Clients / Logos -->
-    <section id="clients" class="bg-gray-50 py-12">
-      <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center">
-        <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-6">Trusted by</h4>
-        <div class="grid grid-cols-3 sm:grid-cols-6 gap-6 items-center">
-          <!-- Use SVG logos or images in production -->
-          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=BBC" alt="BBC logo"> </div>
-          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=ESPN" alt="ESPN logo"> </div>
-          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=FOOTY" alt="Footy logo"> </div>
-          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=NYT" alt="NYT logo"> </div>
-          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=AD" alt="AD logo"> </div>
-          <div class="opacity-60 hover:opacity-100 transition"> <img src="https://via.placeholder.com/120x40?text=VAR" alt="VAR logo"> </div>
+    <!-- Clients -->
+    <section id="clients" class="bg-black text-white py-16">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center" data-animate>
+        <h4 class="text-sm uppercase tracking-widest text-gray-400 mb-8">Trusted By The World's Leading Outlets</h4>
+        <div class="grid grid-cols-3 sm:grid-cols-6 gap-8 items-center opacity-70">
+          <img src="https://via.placeholder.com/120x40/FFFFFF/000000?text=BBC" alt="BBC logo" class="mx-auto" />
+          <img src="https://via.placeholder.com/120x40/FFFFFF/000000?text=ESPN" alt="ESPN logo" class="mx-auto" />
+          <img src="https://via.placeholder.com/120x40/FFFFFF/000000?text=FOOTY" alt="Footy logo" class="mx-auto" />
+          <img src="https://via.placeholder.com/120x40/FFFFFF/000000?text=NYT" alt="NYT logo" class="mx-auto" />
+          <img src="https://via.placeholder.com/120x40/FFFFFF/000000?text=AD" alt="AD logo" class="mx-auto" />
+          <img src="https://via.placeholder.com/120x40/FFFFFF/000000?text=VAR" alt="VAR logo" class="mx-auto" />
         </div>
       </div>
     </section>
@@ -194,24 +170,15 @@
 
   <!-- Footer -->
   <footer class="border-t border-gray-100">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="text-sm text-gray-600">&copy; <span id="year"></span> DC Press — All rights reserved.</div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-gray-600">&copy; <span id="year"></span> DC Press — All Rights Reserved.</div>
       <div class="flex items-center gap-4">
-        <!-- social icons -->
-        <a class="text-gray-600 hover:text-gray-900" href="#" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.2"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
-        </a>
-        <a class="text-gray-600 hover:text-gray-900" href="#" aria-label="Twitter">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M23 4.5c-.8.4-1.7.6-2.6.8.9-.5 1.6-1.4 1.9-2.4-.9.6-1.9 1-3 1.2C18 3 16.7 2.5 15.3 2.5c-2.5 0-4.5 2.1-4.5 4.6 0 .4 0 .8.1 1.1C7.8 8 4.1 6.2 1.8 3.2c-.4.8-.6 1.7-.6 2.7 0 1.6.8 3 2 3.8-.7 0-1.3-.2-1.8-.5 0 2.2 1.5 4.1 3.6 4.5-.5.1-1.1.2-1.7.2-.4 0-.8 0-1.2-.1.8 2.3 3 3.9 5.6 3.9-2 1.5-4.5 2.4-7.2 2.4-.5 0-1 0-1.4-.1 2.6 1.7 5.7 2.7 9 2.7 10.8 0 16.8-9 16.8-16.8V6c1.2-.9 2.2-2 3-3.2z" stroke="currentColor" stroke-width="0.6"/></svg>
-        </a>
-        <a class="text-gray-600 hover:text-gray-900" href="#" aria-label="LinkedIn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M8 11v6M8 8v.01M12 11v6M16 11v6M8 11c0-1.7 2.2-1.7 2.2 0" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/></svg>
-        </a>
+        <a href="https://instagram.com" aria-label="Instagram" class="text-gray-500 hover:text-black transition"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://twitter.com" aria-label="Twitter" class="text-gray-500 hover:text-black transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.298 1.634 4.212 3.793 4.65- indulging.39.106-.803.162-1.227.162-.303 0-.596-.03-1.175-.088.632 1.954 2.449 3.379 4.6 3.419-1.728 1.354-3.837 2.16-6.162 2.16-.403 0-.8-.024-1.19-.069 2.189 1.394 4.768 2.209 7.548 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.213 0-.424-.015-.634.96-.695 1.795-1.562 2.457-2.548z"/></svg></a>
       </div>
     </div>
   </footer>
 
   <script src="scripts/main.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
