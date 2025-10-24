@@ -462,4 +462,40 @@ body {
   color: #fff !important;
 }
 
+/* main.css - small customizations, plus fonts */
+:root{
+  --accent: #111827;
+  --muted: #6b7280;
+}
+
+/* use Inter & Playfair where defined above */
+body { font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+/* Heading font using Playfair if available (applied inline via a class) */
+.font-playfair { font-family: 'Playfair Display', serif; }
+
+/* Nav link styles */
+.nav-link {
+  color: #111827;
+  opacity: 0.9;
+  transition: color .18s ease, opacity .18s ease;
+}
+.nav-link:hover { color: #000; opacity: 1; }
+
+/* subtle transition for hero images */
+img { display:block; max-width:100%; }
+
+/* rounded cards */
+.rounded-xl { border-radius: 14px; }
+
+/* small utility for drop shadows like premium sites */
+.shadow-xl { box-shadow: 0 12px 40px rgba(16,24,40,0.08); }
+
+/* reduce mobile preloader flicker */
+#page-loading-blocs-notifaction { display:none; }
+
+/* responsive tweaks */
+@media (min-width: 1024px) {
+  .font-playfair { letter-spacing: -0.02em; }
+}
 
