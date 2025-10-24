@@ -421,3 +421,45 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 	
 }
 
+/* Custom overrides for ProMotion agency site */
+
+body {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+.navbar-nav .nav-link {
+  color: #fff !important;
+  margin: 0 10px;
+  transition: color 0.2s ease;
+}
+.navbar-nav .nav-link:hover {
+  color: #ccc !important;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-8px);}
+  60% {transform: translateY(-4px);}
+}
+
+.hover-light:hover {
+  color: #fff !important;
+}
+
+
