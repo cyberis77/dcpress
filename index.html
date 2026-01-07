@@ -3,239 +3,273 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="DCP Media — premium sports photography agency. Editorial sports imagery, fast delivery, global coverage." />
-  <title>DCP Media</title>
+  <meta name="description" content="DCP Media — Global Sports Photography & Digital Asset Management." />
+  <title>DCP Media | Editorial Wire & DAM</title>
 
-  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
   
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="style.css" />
-  
-  <!-- Favicon -->  
-  <link rel="icon" href="/assets/favicon.png?v=2" />
+  <style>
+    body { font-family: 'IBM+Plex+Sans', sans-serif; }
+    .font-mono { font-family: 'IBM+Plex+Mono', monospace; }
+    .font-bebas { font-family: 'Bebas+Neue', sans-serif; }
+    .nav-link { position: relative; transition: all 0.3s ease; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -4px;
+      left: 0;
+      background-color: black;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+  </style>
 </head>
+
 <body class="bg-white text-gray-900 antialiased">
 
-  <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-40 bg-white/70 backdrop-blur-sm border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <a class="inline-flex items-end gap-3" href="#">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" class="text-black" aria-hidden="true">
-            <rect x="2" y="3" width="20" height="18" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-            <path d="M6 15h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-          </svg>
-          <span class="font-semibold tracking-tight text-lg">DCP Media</span>
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-10">
+      <div class="flex items-center justify-between h-20">
+        
+        <a class="flex items-center gap-3 shrink-0" href="#">
+          <div class="bg-black p-1.5 rounded">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-white" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="18" rx="2" stroke="currentColor" stroke-width="2"></rect>
+              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"></circle>
+            </svg>
+          </div>
+          <span class="font-bold tracking-tighter text-xl uppercase italic">DCP<span class="font-light not-italic text-gray-400 ml-1">MEDIA</span></span>
         </a>
 
-        <nav class="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
-          <a href="#work" class="nav-link">Work</a>
-          <a href="#about" class="nav-link">About</a>
-          <a href="login.html" class="nav-link">Login</a>
+        <div class="hidden lg:flex flex-1 max-w-md mx-10">
+          <div class="relative w-full group">
+            <div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+              <svg class="w-4 h-4 text-gray-400 group-focus-within:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </div>
+            <input 
+              type="text" 
+              placeholder="Search by event, athlete, or team..." 
+              class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 text-sm py-2.5 pl-10 pr-4 rounded-md transition-all font-medium"
+            >
+            <div class="absolute inset-y-0 right-3 flex items-center">
+              <kbd class="hidden md:inline-block px-1.5 py-0.5 text-[10px] font-mono font-semibold text-gray-400 bg-white border border-gray-200 rounded">CMD + K</kbd>
+            </div>
+          </div>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-[0.15em] font-bold text-gray-500">
+          <a href="#work" class="nav-link hover:text-black">Archive</a>
+          <a href="#about" class="nav-link hover:text-black">Services</a>
+          <div class="h-4 w-[1px] bg-gray-200"></div>
+          <a href="login.html" class="flex items-center gap-2 text-black hover:opacity-70 transition-opacity">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+            Client Access / DAM
+          </a>
         </nav>
 
         <div class="md:hidden">
-          <button id="mobile-menu-button" aria-label="Open menu" class="p-2 rounded-md hover:bg-gray-100">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
+          <button id="mobile-menu-button" class="p-2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
         </div>
       </div>
     </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100">
-      <div class="px-6 pt-4 pb-6 space-y-3">
-        <a href="#work" class="block font-medium">Work</a>
-        <a href="#about" class="block font-medium">About</a>
-        <a href="login.html" class="block font-medium">Login</a>
-      </div>
-    </div>
   </header>
 
-  <main class="pt-16">
-    <!-- Hero -->
-    <section class="relative h-[80vh] lg:h-[90vh] flex items-center">
+  <main class="pt-20">
+    <section class="relative h-[85vh] flex items-center overflow-hidden">
       <div class="absolute inset-0 w-full h-full -z-10">
-        <img src="assets/hero.jpg" alt="Monza F1 Action" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+        <img src="assets/hero.jpg" alt="F1 Action" class="w-full h-full object-cover scale-105" />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
       
-        <!-- Photographer credit -->
-        <div class="absolute bottom-3 right-4 text-[10px] sm:text-xs text-white/70 tracking-wide">
-          © Photo by Diogo Cardoso
-        </div>
-      </div>
-      <div class="max-w-7xl mx-auto px-6 lg:px-8 text-white">
-        <div class="max-w-3xl" data-animate>
-          <p class="inline-block bg-black/70 text-white text-xs uppercase tracking-wider px-3 py-1 rounded-full mb-6">Editorial Sports Imagery</p>
-          <h1 class="text-5xl sm:text-6xl md:text-7xl font-bebas leading-tight drop-shadow-xl mb-6">
-            Moments That Define Sport.
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-10 w-full">
+        <div class="max-w-4xl text-white">
+          <div class="flex items-center gap-2 mb-8 bg-black/40 backdrop-blur-md w-fit px-4 py-2 rounded-full border border-white/10">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+            </span>
+            <span class="text-[10px] font-mono font-bold uppercase tracking-[0.2em]">Live Feed: 2026 World Cup Qualifiers (Europe)</span>
+          </div>
+
+          <h1 class="text-6xl sm:text-7xl md:text-8xl font-bebas leading-none mb-6">
+            Global Sports <br/><span class="text-white/80">Wire Service.</span>
           </h1>
-          <p class="text-lg text-white/90 drop-shadow-lg mb-8">Fast, Reliable, Cinematic.</p>
+          <p class="text-xl text-white/80 max-w-xl font-light leading-relaxed mb-10">
+            Rapid editorial imagery for major news outlets, brands, and sports federations. Access our secure Digital Asset Management portal for real-time delivery.
+          </p>
           <div class="flex flex-wrap gap-4">
-            <a href="#work" class="inline-flex items-center justify-center rounded-md bg-white text-black px-6 py-3 font-semibold shadow-lg hover:bg-gray-200 transition">View Work</a>
-            <a href="#about" class="inline-flex items-center justify-center rounded-md border border-white/40 text-white px-5 py-3 hover:bg-white/10 transition">About Us</a>
+            <a href="#work" class="bg-white text-black px-8 py-4 font-bold text-xs uppercase tracking-widest hover:bg-gray-200 transition">Explore Archive</a>
+            <a href="login.html" class="border border-white/30 backdrop-blur-sm text-white px-8 py-4 font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition">Agency Login</a>
           </div>
         </div>
       </div>
     </section>
 
-<!-- Featured Work -->
-<section id="work" class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8" data-animate>
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-semibold tracking-tight">Selected Work</h2>
-      <p class="text-md text-gray-500 mt-1">A glimpse of recent global coverage — full access requires login.</p>
-    </div>
-
-    <!-- Grid of sample works -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- Work Item 1 -->
-      <a href="login.html" class="group relative overflow-hidden rounded-xl shadow-lg block">
-        <img class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="assets/work1.jpg" alt="Portugal v Hungary">
-        <figcaption class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/80 to-transparent">
-          <div class="text-white transform transition-transform duration-500 group-hover:-translate-y-2">
-            <div class="font-semibold text-lg leading-tight">PRT: Portugal v Hungary – FIFA World Cup 2026 Qualifier</div>
-            <div class="text-gray-300 text-xs uppercase tracking-widest mt-1">October 14, 2025</div>
+    <section id="work" class="py-24 bg-white">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-10">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-100 pb-8">
+          <div>
+            <span class="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-[0.3em] block mb-2">Editorial Wire</span>
+            <h2 class="text-4xl font-semibold tracking-tighter italic">Latest Dispatches</h2>
           </div>
-        </figcaption>
-      </a>
-
-      <!-- Work Item 2 -->
-      <a href="login.html" class="group relative overflow-hidden rounded-xl shadow-lg block">
-        <img class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="assets/work2.jpg" alt="World Athletics">
-        <figcaption class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/80 to-transparent">
-          <div class="text-white transform transition-transform duration-500 group-hover:-translate-y-2">
-            <div class="font-semibold text-lg leading-tight">JPN: World Athletics Championships Tokyo</div>
-            <div class="text-gray-300 text-xs uppercase tracking-widest mt-1">September 13–21, 2025</div>
-          </div>
-        </figcaption>
-      </a>
-
-      <!-- Work Item 3 -->
-      <a href="login.html" class="group relative overflow-hidden rounded-xl shadow-lg block">
-        <img class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="assets/work3.jpg" alt="F1 Hungary">
-        <figcaption class="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/80 to-transparent">
-          <div class="text-white transform transition-transform duration-500 group-hover:-translate-y-2">
-            <div class="font-semibold text-lg leading-tight">HUN: Formula 1 Hungarian Grand Prix</div>
-            <div class="text-gray-300 text-xs uppercase tracking-widest mt-1">August 1–3, 2025</div>
-          </div>
-        </figcaption>
-      </a>
-
-    </div>
-
-    <!-- CTA -->
-    <div class="mt-12 text-center">
-      <a href="login.html" class="inline-flex items-center gap-2 text-md font-semibold bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition shadow-md">
-        Client Access & Full Portfolio
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-    <!-- About -->
-    <section id="about" class="py-20">
-      <div class="max-w-5xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-animate>
-        <div>
-          <h3 class="text-3xl font-semibold mb-4 leading-tight">Editorial Storytelling, Delivered Fast.</h3>
-          <p class="text-gray-600 mb-6 leading-relaxed">Global coverage to produce high-impact imagery and rapid delivery workflows.</p>
-          <ul class="space-y-4 text-gray-700">
-            <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-black mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/></svg>
-              <div><strong>Fast Turnaround:</strong> Editorial pipelines and direct FTP delivery ensure you get the shots you need, when you need them.</div>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-black mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.22 12h17.56M12 21.35V2.65C15.45 4.5 17.5 7.9 17.5 12c0 4.1-2.05 7.5-5.5 9.35z"/></svg>
-              <div><strong>Global Coverage:</strong> Our network covers major sporting events worldwide.</div>
-            </li>
-          </ul>
+          <p class="text-gray-400 text-sm max-w-xs mt-4 md:mt-0">Filtered by: 2025/26 Season. For high-resolution TIFF or RAW files, use your DAM credentials.</p>
         </div>
-        <div class="rounded-xl overflow-hidden shadow-2xl">
-          <img src="assets/work2.jpg" alt="Photographer in action" class="w-full h-full object-cover">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="group cursor-pointer">
+            <div class="relative overflow-hidden aspect-[4/5] bg-gray-100">
+              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="assets/work1.jpg" alt="Match Action">
+              <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="bg-black text-[10px] font-mono text-white px-2 py-1 uppercase tracking-tighter">EXIF: 400mm | f/2.8</span>
+              </div>
+            </div>
+            <div class="mt-4">
+              <div class="flex justify-between items-start">
+                <h3 class="font-bold text-lg leading-tight group-hover:underline">PRT: Portugal v Hungary</h3>
+                <span class="text-[10px] font-mono bg-gray-100 px-2 py-1 rounded uppercase">World Cup</span>
+              </div>
+              <p class="text-gray-500 text-xs mt-2 uppercase tracking-widest">October 14, 2025 • Lisbon, PT</p>
+            </div>
+          </div>
+
+          <div class="group cursor-pointer">
+            <div class="relative overflow-hidden aspect-[4/5] bg-gray-100">
+              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="assets/work2.jpg" alt="Athletics">
+              <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="bg-black text-[10px] font-mono text-white px-2 py-1 uppercase tracking-tighter">EXIF: 70mm | f/4.0</span>
+              </div>
+            </div>
+            <div class="mt-4">
+              <div class="flex justify-between items-start">
+                <h3 class="font-bold text-lg leading-tight group-hover:underline">JPN: World Athletics Tokyo</h3>
+                <span class="text-[10px] font-mono bg-gray-100 px-2 py-1 rounded uppercase">Track</span>
+              </div>
+              <p class="text-gray-500 text-xs mt-2 uppercase tracking-widest">Sept 13–21, 2025 • Tokyo, JP</p>
+            </div>
+          </div>
+
+          <div class="group cursor-pointer">
+            <div class="relative overflow-hidden aspect-[4/5] bg-gray-100">
+              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="assets/work3.jpg" alt="Motorsport">
+              <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="bg-black text-[10px] font-mono text-white px-2 py-1 uppercase tracking-tighter">EXIF: 1/8000s | ISO 100</span>
+              </div>
+            </div>
+            <div class="mt-4">
+              <div class="flex justify-between items-start">
+                <h3 class="font-bold text-lg leading-tight group-hover:underline">HUN: Hungarian Grand Prix</h3>
+                <span class="text-[10px] font-mono bg-gray-100 px-2 py-1 rounded uppercase">Formula 1</span>
+              </div>
+              <p class="text-gray-500 text-xs mt-2 uppercase tracking-widest">August 1–3, 2025 • Budapest, HU</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-<!-- Clients -->
-<section id="clients" class="bg-white py-20 border-t border-gray-100">
-  <div class="max-w-5xl mx-auto px-6 text-center">
-    <h4 class="text-xs uppercase tracking-[0.3em] text-gray-400 mb-12">
-      Trusted by the World's Leading Media Outlets
-    </h4>
-
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-16 sm:gap-28 opacity-90 transition-opacity duration-700 ease-in-out">
-
-      <!-- Getty Images (direct Wikimedia upload URL) -->
-      <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 ease-in-out">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Getty_Images_Logo.svg"
-          alt="Getty Images logo"
-          class="h-10 w-auto object-contain select-none"
-          loading="lazy"
-        />
+    <section id="about" class="py-24 bg-gray-50 border-y border-gray-100">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <h2 class="text-xs font-mono font-bold text-gray-400 uppercase tracking-[0.4em] mb-6">Workflow & Delivery</h2>
+            <h3 class="text-4xl font-semibold mb-8 tracking-tight">Rapid Pipeline, <br/>Global Reach.</h3>
+            <div class="space-y-8">
+              <div class="flex gap-4">
+                <div class="shrink-0 w-10 h-10 bg-black text-white flex items-center justify-center font-mono text-sm">01</div>
+                <div>
+                  <h4 class="font-bold uppercase text-xs tracking-widest mb-1">Direct FTP Ingest</h4>
+                  <p class="text-gray-500 text-sm leading-relaxed">Images transferred from camera to desk via 5G/Starlink in under 60 seconds.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="shrink-0 w-10 h-10 bg-black text-white flex items-center justify-center font-mono text-sm">02</div>
+                <div>
+                  <h4 class="font-bold uppercase text-xs tracking-widest mb-1">DAM Asset Management</h4>
+                  <p class="text-gray-500 text-sm leading-relaxed">Centralized cloud archive with advanced IPTC metadata and AI-tagging for fast retrieval.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="shrink-0 w-10 h-10 bg-black text-white flex items-center justify-center font-mono text-sm">03</div>
+                <div>
+                  <h4 class="font-bold uppercase text-xs tracking-widest mb-1">Press Licensing</h4>
+                  <p class="text-gray-500 text-sm leading-relaxed">Standardized editorial licensing for newsrooms and commercial usage for sponsors.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <img src="assets/work2.jpg" alt="Technical setup" class="grayscale">
+            <div class="absolute -bottom-6 -right-6 bg-white p-8 shadow-xl hidden md:block border border-gray-100">
+              <p class="font-mono text-[10px] text-gray-400 uppercase mb-2">Agency Operations</p>
+              <p class="font-bold text-2xl italic">24/7/365</p>
+              <p class="text-xs text-gray-500">Live Wire Coverage</p>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Divider Dot (visual balance) -->
-      <div class="hidden sm:block h-2 w-2 bg-gray-200 rounded-full" aria-hidden="true"></div>
-
-      <!-- UEFA (direct Wikimedia upload URL) -->
-      <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 ease-in-out">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/b/b5/UEFA_logo.svg"
-          alt="UEFA logo"
-          class="h-10 w-auto object-contain select-none"
-          loading="lazy"
-        />
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <p class="text-center text-[10px] font-mono text-gray-400 uppercase tracking-[0.3em] mb-12">Authorized Delivery Partner To</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Getty_Images_Logo.svg" alt="Getty" class="h-8">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/UEFA_logo.svg" alt="UEFA" class="h-8">
+                </div>
+        </div>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-gray-100 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-  
-      <!-- Left: Copyright -->
-      <div class="text-sm text-gray-600 text-center md:text-left">
-        &copy; <span id="year">2025</span> DCP Media — All Rights Reserved.
+  <footer class="bg-white border-t border-gray-100 py-12">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-start gap-10">
+      <div>
+        <div class="font-bold tracking-tighter text-xl uppercase italic mb-4">DCP<span class="font-light not-italic text-gray-400 ml-1">MEDIA</span></div>
+        <p class="text-gray-400 text-xs max-w-xs leading-relaxed font-mono">
+          Independent Editorial Agency providing high-frequency sports coverage. Registered with the International Sports Press Association (AIPS).
+        </p>
       </div>
-  
-      <!-- Right: Social & Contact -->
-      <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-5">
-
-      <!-- Email 2 -->
-      <a href="mailto:accreditation@dcpmedia.press" aria-label="Email Accreditation" class="flex items-center gap-2 text-gray-500 hover:text-black transition">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6m-18 8h18a2 2 0 002-2V6a2 2 0 00-2-2H3a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-        </svg>
-        <span class="hidden sm:inline text-sm font-medium">accreditation@dcpmedia.press</span>
-      </a>
-  
-
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+        <div>
+          <h5 class="text-[10px] font-bold uppercase tracking-widest mb-4">Archive</h5>
+          <ul class="text-xs text-gray-500 space-y-2">
+            <li><a href="#" class="hover:text-black transition">Football</a></li>
+            <li><a href="#" class="hover:text-black transition">Motorsport</a></li>
+            <li><a href="#" class="hover:text-black transition">Olympic Games</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-[10px] font-bold uppercase tracking-widest mb-4">Legal</h5>
+          <ul class="text-xs text-gray-500 space-y-2">
+            <li><a href="#" class="hover:text-black transition">Licensing Terms</a></li>
+            <li><a href="#" class="hover:text-black transition">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-black transition">Credentials</a></li>
+          </ul>
+        </div>
+        <div class="col-span-2 md:col-span-1">
+          <h5 class="text-[10px] font-bold uppercase tracking-widest mb-4">Support</h5>
+          <a href="mailto:accreditation@dcpmedia.press" class="text-xs text-gray-500 block hover:text-black transition mb-2">accreditation@dcpmedia.press</a>
+          <span class="text-[10px] font-mono text-gray-300">EST. 2018</span>
+        </div>
       </div>
+    </div>
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-10 mt-12 pt-6 border-t border-gray-50 text-[10px] text-gray-300 font-mono flex justify-between uppercase tracking-widest">
+      <span>© 2026 DCP MEDIA GROUP</span>
+      <span>SYSTEM STATUS: OPERATIONAL</span>
     </div>
   </footer>
 
-
-  <script src="scripts/main.js"></script>
 </body>
 </html>
-
