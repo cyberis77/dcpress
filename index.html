@@ -39,12 +39,9 @@
     <div class="max-w-[1440px] mx-auto px-6 lg:px-10">
       <div class="flex items-center justify-between h-20">
         
-        <a class="flex items-center gap-3 shrink-0" href="#">
-          <div class="bg-black p-1.5 rounded">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="text-white" aria-hidden="true">
-              <rect x="2" y="3" width="20" height="18" rx="2" stroke="currentColor" stroke-width="2"></rect>
-              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"></circle>
-            </svg>
+        <a class="flex items-center gap-3 shrink-0 group" href="#">
+          <div class="h-9 w-9 overflow-hidden rounded border border-gray-100 shadow-sm transition-transform group-hover:scale-105">
+            <img src="assets/favicon.png" alt="DCP Logo" class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
           </div>
           <span class="font-bold tracking-tighter text-xl uppercase italic">DCP<span class="font-light not-italic text-gray-400 ml-1">MEDIA</span></span>
         </a>
@@ -63,7 +60,7 @@
               class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 text-sm py-2.5 pl-10 pr-4 rounded-md transition-all font-medium"
             >
             <div class="absolute inset-y-0 right-3 flex items-center">
-              <kbd class="hidden md:inline-block px-1.5 py-0.5 text-[10px] font-mono font-semibold text-gray-400 bg-white border border-gray-200 rounded uppercase">Enter</kbd>
+              <kbd class="hidden md:inline-block px-1.5 py-0.5 text-[10px] font-mono font-semibold text-gray-400 bg-white border border-gray-200 rounded uppercase tracking-tighter">Enter</kbd>
             </div>
           </div>
         </form>
@@ -142,7 +139,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
           <a href="login.html" class="group block cursor-pointer">
             <div class="relative overflow-hidden aspect-[4/5] bg-gray-100 rounded-sm">
               <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="assets/work1.jpg" alt="Match Action">
@@ -158,40 +154,7 @@
               <p class="text-gray-500 text-xs mt-2 uppercase tracking-widest font-mono italic">Asset ID: DCP-2025-0914</p>
             </div>
           </a>
-
-          <a href="login.html" class="group block cursor-pointer">
-            <div class="relative overflow-hidden aspect-[4/5] bg-gray-100 rounded-sm">
-              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="assets/work2.jpg" alt="Athletics">
-              <div class="absolute top-4 left-4">
-                <span class="bg-black/80 backdrop-blur-sm text-[9px] font-mono text-white px-2 py-1 uppercase tracking-widest border border-white/10">Protected Asset</span>
-              </div>
-            </div>
-            <div class="mt-4">
-              <div class="flex justify-between items-start">
-                <h3 class="font-bold text-lg leading-tight group-hover:underline">JPN: World Athletics Tokyo</h3>
-                <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-width="2"/></svg>
-              </div>
-              <p class="text-gray-500 text-xs mt-2 uppercase tracking-widest font-mono italic">Asset ID: DCP-2025-1022</p>
-            </div>
-          </a>
-
-          <a href="login.html" class="group block cursor-pointer">
-            <div class="relative overflow-hidden aspect-[4/5] bg-gray-100 rounded-sm">
-              <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="assets/work3.jpg" alt="Motorsport">
-              <div class="absolute top-4 left-4">
-                <span class="bg-black/80 backdrop-blur-sm text-[9px] font-mono text-white px-2 py-1 uppercase tracking-widest border border-white/10">Protected Asset</span>
-              </div>
-            </div>
-            <div class="mt-4">
-              <div class="flex justify-between items-start">
-                <h3 class="font-bold text-lg leading-tight group-hover:underline">HUN: Hungarian Grand Prix</h3>
-                <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-width="2"/></svg>
-              </div>
-              <p class="text-gray-500 text-xs mt-2 uppercase tracking-widest font-mono italic">Asset ID: DCP-2025-0803</p>
-            </div>
-          </a>
-
-        </div>
+          </div>
       </div>
     </section>
 
@@ -212,7 +175,7 @@
             </a>
           </div>
           <div class="relative opacity-80">
-            <img src="assets/work2.jpg" alt="Technical setup" class="rounded-sm">
+            <img src="assets/work2.jpg" alt="Technical setup" class="rounded-sm shadow-2xl border border-white/5">
             <div class="absolute inset-0 bg-gradient-to-tr from-gray-900 via-transparent to-transparent"></div>
           </div>
         </div>
@@ -225,12 +188,14 @@
     <div class="max-w-[1440px] mx-auto px-6 lg:px-10">
         <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
             <div>
-              <div class="font-bold tracking-tighter text-2xl uppercase italic mb-4">DCP<span class="font-light not-italic text-gray-400 ml-1">MEDIA</span></div>
+              <div class="flex items-center gap-2 font-bold tracking-tighter text-2xl uppercase italic mb-4">
+                <img src="assets/favicon.png" class="h-6 w-6 grayscale opacity-50" alt="">
+                DCP<span class="font-light not-italic text-gray-400 ml-1">MEDIA</span>
+              </div>
               <p class="text-gray-400 text-xs max-w-xs leading-relaxed font-mono uppercase">
                 Licensed Press Agency. Global Distribution via Secure DAM Infrastructure.
               </p>
             </div>
-            
             <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
               <div>
                 <h5 class="text-[10px] font-bold uppercase tracking-widest mb-4">Agency</h5>
@@ -267,16 +232,9 @@
   <script>
     const btn = document.getElementById('mobile-menu-button');
     const menu = document.getElementById('mobile-menu');
-
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-
-    // Close menu when clicking a link
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
     document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.add('hidden');
-      });
+      link.addEventListener('click', () => menu.classList.add('hidden'));
     });
   </script>
 
