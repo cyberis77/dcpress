@@ -25,13 +25,13 @@
       font-size: 1.75rem;
     }
 
-    /* Action-Focused Cropping */
+    /* Action-Focused Cropping (Prioritizes the bottom of the frame) */
     .getty-crop {
       object-fit: cover;
       object-position: bottom;
     }
 
-    /* Card Interaction */
+    /* Event Card Hover Effect */
     .event-card img {
       transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
@@ -96,24 +96,24 @@
 
         <h1 class="headline-editorial mb-12 drop-shadow-2xl">Sports Editorial</h1>
 
-        <form action="login.html" method="GET" class="relative max-w-4xl mx-auto group">
+        <form action="login.html" method="GET" class="relative max-w-6xl mx-auto group">
           <div class="relative">
             <input 
               type="text" 
               name="q"
-              placeholder="Search by event, athlete, or team ID..." 
-              class="w-full bg-white text-black px-12 py-7 pl-20 rounded-full text-xl font-medium placeholder-gray-400 shadow-[0_25px_60px_rgba(0,0,0,0.7)] outline-none focus:ring-[12px] focus:ring-white/10 transition-all"
+              placeholder="Search by event, athlete, team ID, or specific match location..." 
+              class="w-full bg-white text-black px-12 py-8 pl-20 rounded-full text-2xl font-medium placeholder-gray-400 shadow-[0_30px_80px_rgba(0,0,0,0.8)] outline-none focus:ring-[15px] focus:ring-white/10 transition-all"
             >
             <div class="absolute inset-y-0 left-8 flex items-center pointer-events-none text-gray-400 group-focus-within:text-black transition-colors">
-              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
               </svg>
             </div>
-            <button type="submit" class="absolute right-4 inset-y-4 bg-black text-white px-12 rounded-full font-bold text-[11px] uppercase tracking-widest hover:bg-gray-800 transition">
+            <button type="submit" class="absolute right-4 inset-y-4 bg-black text-white px-14 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-gray-800 transition shadow-lg">
               Search Archive
             </button>
           </div>
-          <div class="mt-8 text-[11px] font-mono uppercase tracking-[0.6em] text-white/50 font-bold">
+          <div class="mt-10 text-xs font-mono uppercase tracking-[0.8em] text-white/50 font-bold">
             • Archive Search •
           </div>
         </form>
@@ -123,11 +123,12 @@
     <section id="work" class="py-24 bg-white">
       <div class="max-w-[1540px] mx-auto px-6 lg:px-10">
         <div class="flex flex-col md:flex-row justify-between items-baseline mb-12 border-b border-gray-100 pb-8">
-          <h2 class="text-[12px] font-bold uppercase tracking-[0.4em] text-black">Featured Coverage</h2>
-          <p class="text-gray-400 text-[10px] font-mono uppercase tracking-widest mt-2 md:mt-0 italic font-bold">Real-time Syndication / Madrid Editorial Hub</p>
+          <h2 class="text-[14px] font-bold uppercase tracking-[0.5em] text-black">Featured Coverage</h2>
+          <p class="text-gray-400 text-[10px] font-mono uppercase tracking-widest mt-2 md:mt-0 italic font-bold">Madrid Editorial Hub / Real-time Distribution</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
+          
           <a href="login.html" class="event-card group block">
             <div class="relative overflow-hidden aspect-[3/2] bg-gray-100 mb-8 rounded-sm">
               <img class="w-full h-full getty-crop" src="assets/work1.jpg" alt="PRT v HUN">
@@ -135,12 +136,12 @@
                 <span class="bg-black/90 text-[9px] font-mono text-white px-2 py-1 uppercase tracking-widest">Editorial Asset</span>
               </div>
             </div>
-            <div class="space-y-3">
-              <h3 class="text-2xl font-bold leading-tight group-hover:text-gray-500 transition-colors uppercase tracking-tight">PRT: Portugal v Hungary – FIFA World Cup Qualifier</h3>
-              <div class="flex items-center gap-5">
-                <span class="text-xs font-mono text-gray-500 font-bold uppercase tracking-widest">Oct 14, 2025</span>
-                <span class="text-xs font-mono text-gray-300 italic tracking-tighter">ID: 82440-01</span>
-                <span class="text-xs font-mono text-gray-400 uppercase tracking-widest">Lisbon, PT</span>
+            <div class="space-y-4">
+              <h3 class="text-3xl font-bold leading-none group-hover:text-gray-500 transition-colors uppercase tracking-tighter">PRT: Portugal v Hungary – FIFA World Cup Qualifier</h3>
+              <div class="flex items-center gap-6">
+                <span class="text-sm font-mono text-gray-600 font-bold uppercase tracking-widest">Oct 14, 2025</span>
+                <span class="text-sm font-mono text-gray-300 italic tracking-tighter">ID: 82440-01</span>
+                <span class="text-sm font-mono text-gray-400 uppercase tracking-widest">Lisbon, PT</span>
               </div>
             </div>
           </a>
@@ -152,12 +153,12 @@
                 <span class="bg-black/90 text-[9px] font-mono text-white px-2 py-1 uppercase tracking-widest">Editorial Asset</span>
               </div>
             </div>
-            <div class="space-y-3">
-              <h3 class="text-2xl font-bold leading-tight group-hover:text-gray-500 transition-colors uppercase tracking-tight">JPN: World Athletics Championships Tokyo 2025</h3>
-              <div class="flex items-center gap-5">
-                <span class="text-xs font-mono text-gray-500 font-bold uppercase tracking-widest">Sept 13, 2025</span>
-                <span class="text-xs font-mono text-gray-300 italic tracking-tighter">ID: 82440-02</span>
-                <span class="text-xs font-mono text-gray-400 uppercase tracking-widest">Tokyo, JP</span>
+            <div class="space-y-4">
+              <h3 class="text-3xl font-bold leading-none group-hover:text-gray-500 transition-colors uppercase tracking-tighter">JPN: World Athletics Championships Tokyo 2025</h3>
+              <div class="flex items-center gap-6">
+                <span class="text-sm font-mono text-gray-600 font-bold uppercase tracking-widest">Sept 13, 2025</span>
+                <span class="text-sm font-mono text-gray-300 italic tracking-tighter">ID: 82440-02</span>
+                <span class="text-sm font-mono text-gray-400 uppercase tracking-widest">Tokyo, JP</span>
               </div>
             </div>
           </a>
@@ -169,15 +170,16 @@
                 <span class="bg-black/90 text-[9px] font-mono text-white px-2 py-1 uppercase tracking-widest">Editorial Asset</span>
               </div>
             </div>
-            <div class="space-y-3">
-              <h3 class="text-2xl font-bold leading-tight group-hover:text-gray-500 transition-colors uppercase tracking-tight">HUN: Formula 1 Hungarian Grand Prix – Race Day</h3>
-              <div class="flex items-center gap-5">
-                <span class="text-xs font-mono text-gray-500 font-bold uppercase tracking-widest">Aug 03, 2025</span>
-                <span class="text-xs font-mono text-gray-300 italic tracking-tighter">ID: 82440-03</span>
-                <span class="text-xs font-mono text-gray-400 uppercase tracking-widest">Budapest, HU</span>
+            <div class="space-y-4">
+              <h3 class="text-3xl font-bold leading-none group-hover:text-gray-500 transition-colors uppercase tracking-tighter">HUN: Formula 1 Hungarian Grand Prix – Race Day</h3>
+              <div class="flex items-center gap-6">
+                <span class="text-sm font-mono text-gray-600 font-bold uppercase tracking-widest">Aug 03, 2025</span>
+                <span class="text-sm font-mono text-gray-300 italic tracking-tighter">ID: 82440-03</span>
+                <span class="text-sm font-mono text-gray-400 uppercase tracking-widest">Budapest, HU</span>
               </div>
             </div>
           </a>
+
         </div>
       </div>
     </section>
@@ -209,7 +211,7 @@
                 <span class="text-[11px] font-bold uppercase tracking-[0.4em]">Agency Credentials</span>
             </a>
           </div>
-          <div class="relative h-96 lg:h-[32rem]">
+          <div class="relative h-96 lg:h-[35rem]">
             <img src="assets/work2.jpg" alt="Editorial Ops" class="getty-crop w-full h-full grayscale opacity-40 rounded-sm">
             <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
           </div>
@@ -223,12 +225,12 @@
     <div class="max-w-[1540px] mx-auto px-6 lg:px-10">
         <div class="flex flex-col md:flex-row justify-between items-start gap-16 mb-24">
             <div>
-              <div class="flex items-center gap-4 font-bold tracking-tighter text-3xl uppercase italic mb-8">
+              <div class="flex items-center gap-4 font-bold tracking-tighter text-3xl uppercase italic mb-8 text-black">
                 <img src="assets/favicon.png" class="h-8 w-8 grayscale" alt="">
                 DCP<span class="font-light not-italic text-gray-400 ml-1">MEDIA</span>
               </div>
               <p class="text-gray-400 text-[11px] max-w-xs leading-relaxed font-mono uppercase tracking-widest font-medium">
-                Madrid-Based Syndication. Member of AIPS (International Sports Press Association). 
+                Madrid-Based Syndication. Member of AIPS. 
                 AIPS ID: ES-28046-DCP.
               </p>
             </div>
