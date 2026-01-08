@@ -8,21 +8,16 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
   <style>
-    /* Prevent Flash of Unstyled Content */
     html { visibility: hidden; opacity: 0; } 
     
-    /* Base Typography */
     body { font-family: 'IBM Plex Sans', sans-serif; -webkit-font-smoothing: antialiased; }
-    /* tabular-nums aligns numbers vertically (like a spreadsheet/timeclock) */
     .font-mono { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
     
-    /* Editorial Headlines - Tight and Heavy */
     .headline-editorial {
       font-weight: 700;
       letter-spacing: -0.02em; 
@@ -35,13 +30,11 @@
       .headline-editorial { font-size: 4rem; }
     }
 
-    /* Focus on the Action (Bottom of image) */
     .getty-crop {
       object-fit: cover;
-      object-position: bottom; /* UPDATED: Forces focus to bottom of frame */
+      object-position: bottom;
     }
 
-    /* Custom Scrollbar for a desktop-app feel */
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #fff; }
     ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
@@ -51,7 +44,6 @@
 
 <body class="bg-white text-gray-900 antialiased selection:bg-black selection:text-white">
 
-  <!-- Mobile Menu Overlay -->
   <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col">
     <div class="flex items-center justify-between p-6 border-b border-gray-100">
       <span class="font-bold tracking-tighter text-xl uppercase italic">DCP<span class="font-light not-italic text-gray-400 ml-1">MEDIA</span></span>
@@ -66,7 +58,6 @@
     </nav>
   </div>
 
-  <!-- Navigation -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
     <div class="max-w-[1540px] mx-auto px-6 lg:px-10">
       <div class="flex items-center justify-between h-16 md:h-20">
@@ -99,7 +90,6 @@
 
   <main class="pt-16 md:pt-20">
     
-    <!-- Hero Section -->
     <section class="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0 w-full h-full -z-10">
         <img src="assets/hero.jpg" alt="Editorial Action Background" class="w-full h-full object-cover brightness-[0.6]" />
@@ -108,7 +98,6 @@
       
       <div class="max-w-4xl w-full mx-auto px-6 text-center z-20">
         
-        <!-- Live Badge -->
         <div class="inline-flex items-center gap-3 mb-8 bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20">
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
@@ -121,7 +110,6 @@
           Sports Editorial<br/><span class="text-white/60 font-light block mt-2 text-2xl md:text-4xl tracking-normal normal-case">Visual Storytelling. Delivered.</span>
         </h1>
 
-        <!-- Search Bar -->
         <form action="login.html" method="GET" class="relative max-w-xl mx-auto group">
           <div class="relative transition-transform duration-300 focus-within:-translate-y-1">
             <div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
@@ -150,7 +138,6 @@
       </div>
     </section>
 
-    <!-- Content Wire -->
     <section id="work" class="py-20 bg-white">
       <div class="max-w-[1540px] mx-auto px-6 lg:px-10">
         <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-100 pb-6">
@@ -167,10 +154,8 @@
           </div>
         </div>
 
-        <!-- Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           
-          <!-- Card 1 -->
           <a href="login.html" class="group block cursor-pointer">
             <div class="relative overflow-hidden aspect-[3/2] bg-gray-100 mb-4 rounded-sm shadow-sm">
               <img class="w-full h-full getty-crop transition-transform duration-700 group-hover:scale-105" src="assets/work1.jpg" alt="Portugal Match">
@@ -188,7 +173,6 @@
             </div>
           </a>
 
-          <!-- Card 2 -->
           <a href="login.html" class="group block cursor-pointer">
             <div class="relative overflow-hidden aspect-[3/2] bg-gray-100 mb-4 rounded-sm shadow-sm">
               <img class="w-full h-full getty-crop transition-transform duration-700 group-hover:scale-105" src="assets/work2.jpg" alt="Tokyo Athletics">
@@ -206,7 +190,6 @@
             </div>
           </a>
 
-          <!-- Card 3 -->
           <a href="login.html" class="group block cursor-pointer">
             <div class="relative overflow-hidden aspect-[3/2] bg-gray-100 mb-4 rounded-sm shadow-sm">
               <img class="w-full h-full getty-crop transition-transform duration-700 group-hover:scale-105" src="assets/work3.jpg" alt="F1 GP Budapest">
@@ -228,7 +211,6 @@
       </div>
     </section>
 
-    <!-- Partners / Trust -->
     <section class="py-12 bg-gray-50 border-y border-gray-200">
       <div class="max-w-[1540px] mx-auto px-6 text-center">
         <p class="text-[10px] font-mono text-gray-400 uppercase tracking-[0.2em] font-bold mb-8">Distribution Network</p>
@@ -239,7 +221,6 @@
       </div>
     </section>
 
-    <!-- About / Agency Section -->
     <section id="about" class="py-24 bg-[#111] text-white overflow-hidden">
       <div class="max-w-6xl mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -249,7 +230,6 @@
                 <h2 class="text-[11px] font-mono font-bold text-gray-400 uppercase tracking-[0.3em]">Services</h2>
             </div>
             
-            <!-- UPDATED COPY -->
             <h3 class="text-3xl md:text-4xl font-bold mb-8 tracking-tight leading-none uppercase">
               Precision Delivery. <br/>
               <span class="text-gray-500">Every Sequence.</span>
@@ -322,13 +302,11 @@
   </footer>
 
   <script>
-    // Prevent Flash of Unstyled Content
     document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.style.visibility = 'visible';
         document.documentElement.style.opacity = '1';
     });
 
-    // Mobile Menu Logic
     const btn = document.getElementById('mobile-menu-button');
     const closeBtn = document.getElementById('close-menu-button');
     const menu = document.getElementById('mobile-menu');
@@ -348,7 +326,6 @@
     btn.addEventListener('click', toggleMenu);
     closeBtn.addEventListener('click', toggleMenu);
 
-    // Live Clock
     function updateTime() {
         const now = new Date();
         document.getElementById('server-time').innerText = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
