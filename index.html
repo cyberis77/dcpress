@@ -18,7 +18,6 @@
     body { font-family: 'IBM Plex Sans', sans-serif; }
     .font-mono { font-family: 'IBM Plex Mono', monospace; }
     
-    /* Authoritative Masthead Style */
     .headline-editorial {
       font-weight: 700;
       letter-spacing: 0.25em;
@@ -26,13 +25,13 @@
       font-size: 1.5rem;
     }
 
-    /* Force Focus on the Action (Bottom of image) */
+    /* Action-Focused Cropping */
     .getty-crop {
       object-fit: cover;
       object-position: bottom;
     }
 
-    /* Smooth transition for card hover */
+    /* Card Interaction */
     .event-card img {
       transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
@@ -79,15 +78,14 @@
   <main class="pt-16">
     <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0 w-full h-full -z-10">
-        <img src="assets/hero.jpg" alt="Editorial Action Background" class="w-full h-full object-cover" />
+        <img src="assets/hero.jpg" alt="Editorial Background" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-black/50"></div>
-        
         <div class="absolute bottom-8 right-10 text-[10px] font-mono text-white/40 uppercase tracking-[0.3em] select-none">
           © Photo by Diogo Cardoso
         </div>
       </div>
       
-      <div class="max-w-4xl mx-auto px-6 text-center text-white z-20">
+      <div class="max-w-[1540px] mx-auto px-6 text-center text-white z-20">
         <div class="flex items-center gap-3 mb-8 bg-black/40 backdrop-blur-md w-fit mx-auto px-4 py-1.5 rounded-full border border-white/10">
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
@@ -98,24 +96,24 @@
 
         <h1 class="headline-editorial mb-10 drop-shadow-2xl">Sports Editorial</h1>
 
-        <form action="login.html" method="GET" class="relative max-w-xl mx-auto group">
+        <form action="login.html" method="GET" class="relative max-w-3xl mx-auto group">
           <div class="relative">
             <input 
               type="text" 
               name="q"
-              placeholder="Search by event, athlete, or team..." 
-              class="w-full bg-white text-black px-8 py-5 pl-14 rounded-full text-base font-medium placeholder-gray-400 shadow-[0_20px_50px_rgba(0,0,0,0.5)] outline-none focus:ring-4 focus:ring-white/20 transition-all"
+              placeholder="Search by event, athlete, or team ID..." 
+              class="w-full bg-white text-black px-10 py-6 pl-16 rounded-full text-lg font-medium placeholder-gray-400 shadow-[0_25px_60px_rgba(0,0,0,0.6)] outline-none focus:ring-8 focus:ring-white/10 transition-all"
             >
-            <div class="absolute inset-y-0 left-6 flex items-center pointer-events-none">
-              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="absolute inset-y-0 left-7 flex items-center pointer-events-none">
+              <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
               </svg>
             </div>
-            <button type="submit" class="absolute right-2.5 inset-y-2.5 bg-black text-white px-8 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-gray-800 transition">
-              Search
+            <button type="submit" class="absolute right-3 inset-y-3 bg-black text-white px-10 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-gray-800 transition">
+              Search Archive
             </button>
           </div>
-          <div class="mt-6 text-[10px] font-mono uppercase tracking-[0.5em] text-white/50 font-bold">
+          <div class="mt-8 text-[11px] font-mono uppercase tracking-[0.6em] text-white/50 font-bold">
             • Archive Search •
           </div>
         </form>
@@ -126,62 +124,55 @@
       <div class="max-w-[1540px] mx-auto px-6 lg:px-10">
         <div class="flex flex-col md:flex-row justify-between items-baseline mb-12 border-b border-gray-100 pb-8">
           <h2 class="text-[11px] font-bold uppercase tracking-[0.4em] text-black">Featured Coverage</h2>
-          <p class="text-gray-400 text-[9px] font-mono uppercase tracking-widest mt-2 md:mt-0 italic font-bold">Real-time Syndication Feed / Madrid Editorial Hub</p>
+          <p class="text-gray-400 text-[9px] font-mono uppercase tracking-widest mt-2 md:mt-0 italic font-bold">Real-time Syndication / Madrid Editorial Hub</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
-          
-          <a href="login.html" class="event-card group block cursor-pointer">
+          <a href="login.html" class="event-card group block">
             <div class="relative overflow-hidden aspect-[3/2] bg-gray-100 mb-6 rounded-sm">
-              <img class="w-full h-full getty-crop" src="assets/work1.jpg" alt="Portugal Match">
+              <img class="w-full h-full getty-crop" src="assets/work1.jpg" alt="PRT v HUN">
               <div class="absolute top-4 left-4">
-                <span class="bg-black/90 text-[8px] font-mono text-white px-2 py-1 uppercase tracking-widest border border-white/10">Editorial Asset</span>
+                <span class="bg-black/90 text-[8px] font-mono text-white px-2 py-1 uppercase tracking-widest">Editorial Asset</span>
               </div>
             </div>
             <div class="space-y-2">
               <h3 class="text-base font-bold leading-tight group-hover:text-gray-500 transition-colors uppercase tracking-tight">PRT: Portugal v Hungary – FIFA World Cup Qualifier</h3>
-              <div class="flex items-center gap-4 pt-1">
+              <div class="flex items-center gap-4">
                 <span class="text-[10px] font-mono text-gray-500 font-bold uppercase">Oct 14, 2025</span>
-                <span class="text-[10px] font-mono text-gray-300 uppercase tracking-tighter italic font-medium">Asset ID: 82440-01</span>
-                <span class="text-[10px] font-mono text-gray-400 uppercase">Lisbon, PT</span>
+                <span class="text-[10px] font-mono text-gray-300 italic">ID: 82440-01</span>
               </div>
             </div>
           </a>
-
-          <a href="login.html" class="event-card group block cursor-pointer">
+          <a href="login.html" class="event-card group block">
             <div class="relative overflow-hidden aspect-[3/2] bg-gray-100 mb-6 rounded-sm">
-              <img class="w-full h-full getty-crop" src="assets/work2.jpg" alt="Tokyo Athletics">
+              <img class="w-full h-full getty-crop" src="assets/work2.jpg" alt="JPN Tokyo">
               <div class="absolute top-4 left-4">
-                <span class="bg-black/90 text-[8px] font-mono text-white px-2 py-1 uppercase tracking-widest border border-white/10">Editorial Asset</span>
+                <span class="bg-black/90 text-[8px] font-mono text-white px-2 py-1 uppercase tracking-widest">Editorial Asset</span>
               </div>
             </div>
             <div class="space-y-2">
               <h3 class="text-base font-bold leading-tight group-hover:text-gray-500 transition-colors uppercase tracking-tight">JPN: World Athletics Championships Tokyo 2025</h3>
-              <div class="flex items-center gap-4 pt-1">
+              <div class="flex items-center gap-4">
                 <span class="text-[10px] font-mono text-gray-500 font-bold uppercase">Sept 13, 2025</span>
-                <span class="text-[10px] font-mono text-gray-300 uppercase tracking-tighter italic font-medium">Asset ID: 82440-02</span>
-                <span class="text-[10px] font-mono text-gray-400 uppercase">Tokyo, JP</span>
+                <span class="text-[10px] font-mono text-gray-300 italic">ID: 82440-02</span>
               </div>
             </div>
           </a>
-
-          <a href="login.html" class="event-card group block cursor-pointer">
+          <a href="login.html" class="event-card group block">
             <div class="relative overflow-hidden aspect-[3/2] bg-gray-100 mb-6 rounded-sm">
-              <img class="w-full h-full getty-crop" src="assets/work3.jpg" alt="F1 GP Budapest">
+              <img class="w-full h-full getty-crop" src="assets/work3.jpg" alt="F1 Budapest">
               <div class="absolute top-4 left-4">
-                <span class="bg-black/90 text-[8px] font-mono text-white px-2 py-1 uppercase tracking-widest border border-white/10">Editorial Asset</span>
+                <span class="bg-black/90 text-[8px] font-mono text-white px-2 py-1 uppercase tracking-widest">Editorial Asset</span>
               </div>
             </div>
             <div class="space-y-2">
               <h3 class="text-base font-bold leading-tight group-hover:text-gray-500 transition-colors uppercase tracking-tight">HUN: Formula 1 Hungarian Grand Prix – Race Day</h3>
-              <div class="flex items-center gap-4 pt-1">
+              <div class="flex items-center gap-4">
                 <span class="text-[10px] font-mono text-gray-500 font-bold uppercase">Aug 03, 2025</span>
-                <span class="text-[10px] font-mono text-gray-300 uppercase tracking-tighter italic font-medium">Asset ID: 82440-03</span>
-                <span class="text-[10px] font-mono text-gray-400 uppercase">Budapest, HU</span>
+                <span class="text-[10px] font-mono text-gray-300 italic">ID: 82440-03</span>
               </div>
             </div>
           </a>
-
         </div>
       </div>
     </section>
@@ -189,8 +180,8 @@
     <section class="py-16 bg-gray-50 border-y border-gray-100">
       <div class="max-w-[1540px] mx-auto px-6 text-center">
         <p class="text-[9px] font-mono text-gray-400 uppercase tracking-[0.5em] mb-12">Official Syndication Channels</p>
-        <div class="flex items-center justify-center gap-16 md:gap-32 opacity-30 grayscale hover:opacity-100 transition-all duration-1000">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Getty_Images_Logo.svg" alt="Getty Images" class="h-8 md:h-10">
+        <div class="flex items-center justify-center gap-16 md:gap-32 opacity-30 grayscale hover:opacity-100 transition-all duration-700">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Getty_Images_Logo.svg" alt="Getty" class="h-8 md:h-10">
           <div class="hidden sm:block w-[1px] h-8 bg-gray-200"></div>
           <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/UEFA_logo.svg" alt="UEFA" class="h-8 md:h-10">
         </div>
@@ -202,21 +193,19 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
             <h2 class="text-[10px] font-mono font-bold text-gray-500 uppercase tracking-[0.5em] mb-8">Infrastructure</h2>
-            <h3 class="text-4xl font-bold mb-10 tracking-tight leading-tight uppercase italic">Secure Pipeline. <br/>Global Syndication.</h3>
-            <p class="text-gray-400 text-base mb-12 leading-relaxed font-light max-w-lg">
-                Engineered for newsrooms and broadcasters. From direct FTP ingest to Starlink-enabled field transmission, our secure DAM infrastructure ensures assets are live within seconds of capture.
+            <h3 class="text-6xl font-semibold mb-10 tracking-tight leading-[0.9] italic">Precision Delivery. <br/>Every Sequence.</h3>
+            <p class="text-gray-400 text-lg mb-12 leading-relaxed font-light max-w-lg">
+                Our ecosystem is engineered for the fast-paced newsroom. From direct FTP ingest to Starlink-enabled field transmission, our secure DAM infrastructure ensures assets are live within seconds of capture.
             </p>
             <a href="login.html" class="inline-flex items-center gap-6 group">
                 <div class="w-12 h-12 bg-white text-black flex items-center justify-center rounded-full transition-transform group-hover:scale-110">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </div>
-                <span class="text-[10px] font-bold uppercase tracking-[0.3em]">Apply for Agency Credentials</span>
+                <span class="text-[10px] font-bold uppercase tracking-[0.3em]">Agency Credentials</span>
             </a>
           </div>
           <div class="relative h-80 lg:h-96">
-            <img src="assets/work2.jpg" alt="Editorial Ops" class="getty-crop w-full h-full grayscale opacity-40 rounded-sm shadow-2xl">
+            <img src="assets/work2.jpg" alt="Editorial Ops" class="getty-crop w-full h-full grayscale opacity-40 rounded-sm">
             <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
           </div>
         </div>
@@ -234,8 +223,7 @@
                 DCP<span class="font-light not-italic text-gray-400 ml-1">MEDIA</span>
               </div>
               <p class="text-gray-400 text-[10px] max-w-xs leading-relaxed font-mono uppercase tracking-[0.1em] font-medium">
-                Madrid-Based Syndication. Member of AIPS (International Sports Press Association). 
-                AIPS ID: ES-28046-DCP.
+                Madrid-Based Syndication. AIPS Member: ES-28046-DCP.
               </p>
             </div>
             
@@ -249,19 +237,11 @@
                 </ul>
               </div>
               <div>
-                <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6 text-black">Legal</h5>
-                <ul class="text-[10px] text-gray-500 space-y-3 uppercase tracking-widest font-medium">
-                  <li><a href="login.html" class="hover:text-black transition">Licensing</a></li>
-                  <li><a href="login.html" class="hover:text-black transition">IPTC Standards</a></li>
-                  <li><a href="login.html" class="hover:text-black transition">Privacy</a></li>
-                </ul>
-              </div>
-              <div>
                 <h5 class="text-[10px] font-bold uppercase tracking-widest mb-6 text-black">Editorial Office</h5>
                 <address class="not-italic text-[10px] text-gray-500 space-y-2 leading-relaxed uppercase tracking-widest font-medium">
                   <p>Paseo de la Castellana, 95</p>
                   <p>28046 Madrid, Spain</p>
-                  <p class="pt-3 font-mono text-[9px] text-gray-400 tracking-normal italic">+34 910 782 440</p>
+                  <p class="pt-3 font-mono text-[9px] text-gray-400 italic tracking-normal">+34 910 782 440</p>
                   <a href="mailto:accreditation@dcpmedia.press" class="block text-black underline underline-offset-8 mt-4 font-bold">accreditation@dcpmedia.press</a>
                 </address>
               </div>
@@ -275,7 +255,7 @@
                     <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> 
                     Wire: Active
                 </span>
-                <span class="text-black font-bold uppercase">ES-MADRID</span>
+                <span class="text-black font-bold uppercase tracking-widest">ES-MADRID</span>
             </div>
         </div>
     </div>
