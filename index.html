@@ -35,10 +35,10 @@
       .headline-editorial { font-size: 4rem; }
     }
 
-    /* Focus on the Action */
+    /* Focus on the Action (Bottom of image) */
     .getty-crop {
       object-fit: cover;
-      object-position: top center; /* Usually faces/action are in the top half */
+      object-position: bottom; /* UPDATED: Forces focus to bottom of frame */
     }
 
     /* Custom Scrollbar for a desktop-app feel */
@@ -102,7 +102,6 @@
     <!-- Hero Section -->
     <section class="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0 w-full h-full -z-10">
-        <!-- Kept your image -->
         <img src="assets/hero.jpg" alt="Editorial Action Background" class="w-full h-full object-cover brightness-[0.6]" />
         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div>
       </div>
@@ -250,10 +249,13 @@
                 <div class="h-[1px] w-8 bg-white/30"></div>
                 <h2 class="text-[11px] font-mono font-bold text-gray-400 uppercase tracking-[0.3em]">Services</h2>
             </div>
+            
+            <!-- UPDATED COPY -->
             <h3 class="text-3xl md:text-4xl font-bold mb-8 tracking-tight leading-none uppercase">
-              Global Coverage. <br/>
-              <span class="text-gray-500">Real-time Feed.</span>
+              Precision Delivery. <br/>
+              <span class="text-gray-500">Every Sequence.</span>
             </h3>
+
             <p class="text-gray-400 text-sm md:text-base mb-10 leading-relaxed font-light max-w-lg border-l border-gray-700 pl-6">
                 DCP Media provides comprehensive sports photography for publishers, broadcasters, and commercial partners. Our photographers are positioned at the finish line, delivering high-resolution assets to the wire seconds after the action unfolds.
             </p>
@@ -263,7 +265,7 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
             </a>
           </div>
-          <!-- Reused your image here -->
+          
           <div class="relative h-80 lg:h-[450px]">
             <img src="assets/work2.jpg" alt="Photographer in field" class="w-full h-full object-cover grayscale opacity-60 rounded-sm shadow-2xl border border-white/10">
           </div>
