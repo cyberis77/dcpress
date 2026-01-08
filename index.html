@@ -20,12 +20,12 @@
     
     .headline-editorial {
       font-weight: 700;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      font-size: 1.75rem;
+      font-size: 1.5rem;
     }
 
-    /* Action-Focused Cropping (Prioritizes the bottom of the frame) */
+    /* Action-Focused Cropping (Focuses on the turf/action) */
     .getty-crop {
       object-fit: cover;
       object-position: bottom;
@@ -96,24 +96,24 @@
 
         <h1 class="headline-editorial mb-12 drop-shadow-2xl">Sports Editorial</h1>
 
-        <form action="login.html" method="GET" class="relative max-w-6xl mx-auto group">
+        <form action="login.html" method="GET" class="relative max-w-4xl mx-auto group">
           <div class="relative">
             <input 
               type="text" 
               name="q"
               placeholder="Search by event, athlete, team ID, or specific match location..." 
-              class="w-full bg-white text-black px-12 py-8 pl-20 rounded-full text-2xl font-medium placeholder-gray-400 shadow-[0_30px_80px_rgba(0,0,0,0.8)] outline-none focus:ring-[15px] focus:ring-white/10 transition-all"
+              class="w-full bg-white text-black px-12 py-7 pl-20 rounded-full text-lg font-medium placeholder-gray-400 shadow-[0_30px_80px_rgba(0,0,0,0.8)] outline-none focus:ring-[12px] focus:ring-white/10 transition-all"
             >
             <div class="absolute inset-y-0 left-8 flex items-center pointer-events-none text-gray-400 group-focus-within:text-black transition-colors">
-              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
               </svg>
             </div>
-            <button type="submit" class="absolute right-4 inset-y-4 bg-black text-white px-14 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-gray-800 transition shadow-lg">
+            <button type="submit" class="absolute right-3 inset-y-3 bg-black text-white px-10 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-gray-800 transition">
               Search Archive
             </button>
           </div>
-          <div class="mt-10 text-xs font-mono uppercase tracking-[0.8em] text-white/50 font-bold">
+          <div class="mt-8 text-xs font-mono uppercase tracking-[0.6em] text-white/50 font-bold">
             • Archive Search •
           </div>
         </form>
@@ -123,12 +123,11 @@
     <section id="work" class="py-24 bg-white">
       <div class="max-w-[1540px] mx-auto px-6 lg:px-10">
         <div class="flex flex-col md:flex-row justify-between items-baseline mb-12 border-b border-gray-100 pb-8">
-          <h2 class="text-[14px] font-bold uppercase tracking-[0.5em] text-black">Featured Coverage</h2>
-          <p class="text-gray-400 text-[10px] font-mono uppercase tracking-widest mt-2 md:mt-0 italic font-bold">Madrid Editorial Hub / Real-time Distribution</p>
+          <h2 class="text-[12px] font-bold uppercase tracking-[0.5em] text-black">Featured Coverage</h2>
+          <p class="text-gray-400 text-[10px] font-mono uppercase tracking-widest mt-2 md:mt-0 italic font-bold">Madrid Editorial Hub / 2026 Cycle</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
-          
           <a href="login.html" class="event-card group block">
             <div class="relative overflow-hidden aspect-[3/2] bg-gray-100 mb-8 rounded-sm">
               <img class="w-full h-full getty-crop" src="assets/work1.jpg" alt="PRT v HUN">
@@ -179,7 +178,6 @@
               </div>
             </div>
           </a>
-
         </div>
       </div>
     </section>
