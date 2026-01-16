@@ -3,31 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FULL BLEED | FC Porto: The Farioli Era</title>
+  <title>FULL BLEED | The Dragon's Renaissance</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Fonts: IBM Plex (Brand UI) + Merriweather (Storytelling) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&family=IBM+Plex+Mono:wght@400;500&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&family=IBM+Plex+Mono:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 
   <style>
     /* Editorial Logic */
     body { background-color: #fdfdfd; color: #111; }
     
-    /* The Brand Font for UI */
+    /* Typography System */
     .font-brand { font-family: 'IBM Plex Sans', sans-serif; }
     .font-mono { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
-    
-    /* The Story Font - Optimized for reading */
     .font-editorial { font-family: 'Merriweather', serif; line-height: 1.9; }
 
     /* Visual pacing: Full screen images */
     .photo-stage {
-      height: 90vh;
+      height: 95vh;
       width: 100%;
       position: relative;
-      margin-bottom: 4rem;
+      margin-bottom: 5rem;
       overflow: hidden;
     }
     
@@ -35,36 +33,60 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      /* Default focus is bottom (faces/action), but adjustable per image */
-      object-position: bottom; 
+      /* Default focus is bottom (faces/action) */
+      object-position: center 30%; 
     }
 
-    /* Text constraints for readability (Golden Ratio for line width) */
+    /* Text constraints */
     .narrative-col {
       max-width: 680px;
       margin: 0 auto;
       padding: 0 24px;
     }
-    
-    /* Fade in animation for the title */
+
+    /* Pull Quote Styling */
+    .pull-quote {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 1.8rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 4rem 0;
+      padding-left: 20px;
+      border-left: 4px solid #000;
+    }
+
+    /* Data Grid Styling */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 3rem 0;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 2rem 0;
+    }
+
+    /* Fade in animation */
     .fade-in { opacity: 0; animation: fadeIn 2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
     @keyframes fadeIn { to { opacity: 1; } }
 
-    /* Custom Selection Color */
-    ::selection { background: #004d98; color: white; } /* Porto Blue */
+    /* Custom Selection Color (Porto Blue) */
+    ::selection { background: #004d98; color: white; } 
   </style>
 </head>
 
 <body class="antialiased">
 
-  <!-- Minimal Header (Mix-blend-difference allows it to be visible on dark or light images) -->
+  <!-- Minimal Header -->
   <header class="fixed top-0 left-0 w-full z-50 mix-blend-difference text-white p-6 md:p-10 flex justify-between items-start">
     <a href="index.html" class="font-brand font-bold tracking-tighter text-xl uppercase italic group">
       DCP<span class="font-normal opacity-70 group-hover:opacity-100 transition-opacity">/FULLBLEED</span>
     </a>
     <div class="text-right hidden md:block">
-      <span class="block font-mono text-[10px] uppercase tracking-widest">Volume 01</span>
-      <span class="block font-mono text-[10px] uppercase tracking-widest opacity-60">The Farioli Era</span>
+      <span class="block font-mono text-[10px] uppercase tracking-widest">Special Report</span>
+      <span class="block font-mono text-[10px] uppercase tracking-widest opacity-60">Vol. 01: Fariolismo</span>
     </div>
   </header>
 
@@ -72,46 +94,47 @@
 
     <!-- Cover Section -->
     <section class="h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
-      <!-- Background: Atmospheric shot -->
-      <!-- We use a placeholder here for the 'Vibe' before the story starts -->
-      <img src="assets/hero.jpg" class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale" alt="Atmosphere">
+      <!-- Image: Repeated Use (Hero) -->
+      <img src="assets/hero.jpg" class="absolute inset-0 w-full h-full object-cover opacity-60 grayscale" alt="Atmosphere">
       <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"></div>
       
-      <div class="relative z-10 text-center max-w-4xl px-6 fade-in mt-10">
-        <span class="block font-mono text-xs text-gray-400 mb-6 uppercase tracking-[0.3em]">Visual Essay</span>
+      <div class="relative z-10 text-center max-w-5xl px-6 fade-in mt-10">
+        <span class="block font-mono text-xs text-gray-400 mb-6 uppercase tracking-[0.3em]">Strategic Report 2025/26</span>
         
-        <h1 class="font-brand text-6xl md:text-9xl font-bold uppercase tracking-tighter leading-[0.85] mb-8">
-          Sixteen<br/><span class="text-white/40 font-light">of</span> Seventeen
+        <h1 class="font-brand text-5xl md:text-8xl font-bold uppercase tracking-tighter leading-[0.9] mb-8">
+          The Dragon’s<br/><span class="text-white/40 font-light">Renaissance</span>
         </h1>
         
-        <p class="font-editorial text-lg md:text-2xl text-gray-300 italic font-light max-w-2xl mx-auto">
-          In an era of disposable images, we pause to document the architecture of a winning streak.
+        <p class="font-editorial text-lg md:text-xl text-gray-300 italic font-light max-w-2xl mx-auto">
+          The architecture of a new era: How Francesco Farioli redesigned FC Porto’s identity in six months.
         </p>
       </div>
       
-      <!-- Scroll Indicator -->
       <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30 animate-pulse">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7"></path></svg>
       </div>
     </section>
 
-    <!-- The Manifesto -->
-    <section class="py-32 bg-white">
-      <div class="narrative-col text-center">
-        <p class="font-editorial text-xl md:text-2xl text-black font-light leading-relaxed">
-          The modern game is consumed in thumbnails. Highlights are trimmed to ten seconds; emotion is compressed into a GIF. But the story of FC Porto’s 2025/26 season cannot be understood in fast forward. Under Francesco Farioli, the statistics are impressive, but the visuals are undeniable. To understand the dominance, you must look at the silence between the noise.
+    <!-- CHAPTER 1: The New Architecture -->
+    <section class="py-24 bg-white">
+      <div class="narrative-col">
+        <span class="font-mono text-xs font-bold text-blue-700 uppercase tracking-widest mb-4 block">01. Introduction</span>
+        <h2 class="font-brand text-3xl md:text-4xl font-bold leading-tight mb-8">The End of the Monolith</h2>
+        
+        <p class="font-editorial text-lg text-gray-800 mb-6">
+          The 2025/2026 season marks a paradigm shift in the history of Futebol Clube do Porto. Following the seismic electoral victory of André Villas-Boas—ending the monolithic 42-year presidency of Jorge Nuno Pinto da Costa—the club embarked on a project of aggressive modernization.
         </p>
-        <div class="h-[1px] w-12 bg-black mx-auto mt-16"></div>
+        <p class="font-editorial text-lg text-gray-800">
+          The appointment of Francesco Farioli on July 6, 2025, was a declaration of intent. At 36 years old, the Italian tactician represented the antithesis of the previous regime's pragmatic style. Farioli arrived with a reputation as a "philosopher" of the game, a disciple of the aesthetic school honed at Nice and Ajax. His mandate was clear: marry Porto's historical requirement for dominance with a sophisticated, modern brand of football capable of valorizing assets in a volatile market.
+        </p>
       </div>
     </section>
 
-    <!-- PHOTO SEQUENCE 1: The Architect -->
-    <article class="mb-32 md:mb-48">
+    <!-- PHOTO: Farioli (Placeholder: work1.jpg) -->
+    <article class="mb-24">
       <figure class="photo-stage group cursor-crosshair">
-        <!-- Interaction: Image starts Grayscale, reveals Color on hover -->
-        <img src="assets/work1.jpg" alt="Francesco Farioli directing play" class="grayscale group-hover:grayscale-0 transition-all duration-[1.5s] ease-in-out scale-100 group-hover:scale-105">
-        
-        <!-- Floating Caption -->
+        <!-- Grayscale to Color Interaction -->
+        <img src="assets/work1.jpg" alt="Francesco Farioli" class="grayscale group-hover:grayscale-0 transition-all duration-[1.5s] ease-in-out scale-100 group-hover:scale-105">
         <figcaption class="absolute bottom-6 left-6 md:left-10 text-white mix-blend-difference z-20">
           <span class="block text-[10px] font-mono uppercase tracking-[0.3em] mb-1">Fig I.</span>
           <span class="block font-brand text-sm font-bold uppercase tracking-widest">The Architect</span>
@@ -119,37 +142,78 @@
       </figure>
 
       <div class="narrative-col">
-        <h3 class="font-mono text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Estádio do Dragão, Nov 2025</h3>
-        <p class="font-editorial text-lg md:text-xl text-gray-800">
-            He stands on the periphery, often motionless in the chaos. Francesco Farioli does not merely spectate; he calibrates. The Italian’s arrival in Porto was met with curiosity, but his methodology has silenced the skeptics. In this frame, the isolation is palpable. The burden of the streak rests here, in the quiet calculation before the whistle. He is building a machine, gear by gear, in plain sight.
-        </p>
+        <div class="pull-quote">
+          "Farioli adheres to the maxim of defending by attacking. A revolution in blue and white."
+        </div>
       </div>
     </article>
 
-    <!-- PHOTO SEQUENCE 2: The Spark -->
-    <article class="mb-32 md:mb-48">
-      <figure class="photo-stage group cursor-crosshair">
-        <img src="assets/work2.jpg" alt="Goal Celebration" class="grayscale group-hover:grayscale-0 transition-all duration-[1.5s] ease-in-out scale-100 group-hover:scale-105">
+    <!-- CHAPTER 2: Fariolismo -->
+    <section class="py-12 bg-white">
+      <div class="narrative-col">
+        <span class="font-mono text-xs font-bold text-blue-700 uppercase tracking-widest mb-4 block">02. Tactical DNA</span>
+        <h2 class="font-brand text-3xl md:text-4xl font-bold leading-tight mb-8">"Press-Baiting" and Control</h2>
         
+        <p class="font-editorial text-lg text-gray-800 mb-6">
+          The tactical identity, colloquially termed "Fariolismo," is built on non-negotiable pillars. Unlike the direct verticality of the Conceição era, this Porto seeks to hold the ball in deep zones. The centre-backs invite pressure, standing still with the ball to trigger an opponent's press. Once the opposition commits, Porto exploits the stretched spaces through rapid, third-man combinations.
+        </p>
+        <p class="font-editorial text-lg text-gray-800 mb-6">
+          While nominally a 4-3-3, the shape is fluid. In possession, full-backs like Francisco Moura invert into midfield, creating a 2-3 rest-defense structure. This allows "free 8s"—such as Gabri Veiga—to push high into the half-spaces, effectively forming a front line of five attackers.
+        </p>
+
+        <!-- DATA VISUALIZATION -->
+        <div class="stat-grid">
+          <div>
+            <span class="block font-mono text-3xl font-bold text-black">65%</span>
+            <span class="block font-mono text-[9px] uppercase tracking-widest text-gray-500 mt-1">Avg. Possession</span>
+          </div>
+          <div>
+            <span class="block font-mono text-3xl font-bold text-black">13</span>
+            <span class="block font-mono text-[9px] uppercase tracking-widest text-gray-500 mt-1">League Clean Sheets</span>
+          </div>
+          <div>
+             <span class="block font-mono text-3xl font-bold text-black">16/17</span>
+             <span class="block font-mono text-[9px] uppercase tracking-widest text-gray-500 mt-1">Wins in League</span>
+           </div>
+           <div>
+             <span class="block font-mono text-3xl font-bold text-black">1st</span>
+             <span class="block font-mono text-[9px] uppercase tracking-widest text-gray-500 mt-1">Recoveries in Opp. Half</span>
+           </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PHOTO: Action (Placeholder: work2.jpg) -->
+    <article class="mb-24">
+      <figure class="photo-stage group cursor-crosshair">
+        <img src="assets/work2.jpg" alt="Samu Celebration" class="grayscale group-hover:grayscale-0 transition-all duration-[1.5s] ease-in-out scale-100 group-hover:scale-105" style="object-position: top;">
         <figcaption class="absolute bottom-6 left-6 md:left-10 text-white mix-blend-difference z-20">
           <span class="block text-[10px] font-mono uppercase tracking-[0.3em] mb-1">Fig II.</span>
           <span class="block font-brand text-sm font-bold uppercase tracking-widest">The Release</span>
         </figcaption>
       </figure>
-
-      <div class="narrative-col">
-        <h3 class="font-mono text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">88th Minute</h3>
-        <p class="font-editorial text-lg md:text-xl text-gray-800">
-            When the system yields a result, the tactical discipline evaporates into pure, unadulterated release. This is not just a goal; it is validation. Notice the blur, the distortion of limbs. For ninety minutes, they play within a rigid structure. In this second, the structure breaks. The sound of the Dragão is not heard, but felt. It is a vibration that starts on the grass and ends in the rafters.
-        </p>
-      </div>
     </article>
 
-    <!-- PHOTO SEQUENCE 3: The Connection -->
-    <article class="mb-32 md:mb-48">
-      <figure class="photo-stage group cursor-crosshair">
-        <img src="assets/work3.jpg" alt="Team hugging the manager" class="grayscale group-hover:grayscale-0 transition-all duration-[1.5s] ease-in-out scale-100 group-hover:scale-105">
+    <!-- CHAPTER 3: The Market & The Crisis -->
+    <section class="py-12 bg-white">
+      <div class="narrative-col">
+        <span class="font-mono text-xs font-bold text-blue-700 uppercase tracking-widest mb-4 block">03. The Winter Disruption</span>
+        <h2 class="font-brand text-3xl md:text-4xl font-bold leading-tight mb-8">High Stakes and Heavy Exits</h2>
         
+        <p class="font-editorial text-lg text-gray-800 mb-6">
+          Success brought its own set of challenges. The January 2026 window tested the squad's depth and the fans' resolve. The most significant event was the transfer of Nico González to Manchester City on Deadline Day. City triggered the €60 million release clause, leaving Porto powerless. While financially a massive success—bought for €8.5m—sportingly it leaves a void in midfield that Farioli must fill internally.
+        </p>
+        <p class="font-editorial text-lg text-gray-800 mb-6">
+          Compounding the exit of Galeno to Al-Ahli (€50m), the squad now faces a severe injury crisis. Nehuén Pérez, the defensive leader, suffered an Achilles rupture, and creative outlet Francisco Moura is sidelined. Farioli has been forced to rely on the veteran Thiago Silva, signed as a free agent in December, whose 41 years bring experience but test the high-line philosophy.
+        </p>
+      </div>
+    </section>
+
+    <!-- PHOTO: Team/Unity (Placeholder: work3.jpg) -->
+    <article class="mb-24">
+      <figure class="photo-stage group cursor-crosshair">
+        <img src="assets/work3.jpg" alt="Team Huddle" class="grayscale group-hover:grayscale-0 transition-all duration-[1.5s] ease-in-out scale-100 group-hover:scale-105">
         <figcaption class="absolute bottom-6 left-6 md:left-10 text-white mix-blend-difference z-20">
           <span class="block text-[10px] font-mono uppercase tracking-[0.3em] mb-1">Fig III.</span>
           <span class="block font-brand text-sm font-bold uppercase tracking-widest">Synchronization</span>
@@ -157,9 +221,9 @@
       </figure>
 
       <div class="narrative-col">
-        <h3 class="font-mono text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">The Collective</h3>
-        <p class="font-editorial text-lg md:text-xl text-gray-800">
-            This is the defining image of the campaign. A player, moments after altering the scoreline, seeks out the architect. The barrier between the technical area and the pitch dissolves. Farioli is not a distant general; he is the gravitational center of the squad. In this embrace, you see the transfer of trust. Sixteen wins are not achieved by instruction alone—they are achieved by belief.
+        <h3 class="font-mono text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Tactical Deep Dive</h3>
+        <p class="font-editorial text-lg text-gray-800">
+            Despite the disruptions, the results remain impeccable. The quarter-final victory over Benfica was a masterclass in adaptation. Farioli adjusted, pressing slightly lower to invite Benfica forward before countering via Jan Bednarek's decisive header. The contract extension until 2028 serves as a beacon of stability amidst the winter chaos.
         </p>
       </div>
     </article>
@@ -173,7 +237,7 @@
         
         <div class="flex flex-col items-center gap-6">
             <span class="font-brand text-xs font-bold uppercase tracking-widest border border-gray-200 px-4 py-2 bg-white">
-            End of Feature
+            End of Report
             </span>
             
             <a href="index.html" class="group flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.2em] text-gray-400 hover:text-black transition-colors mt-8">
@@ -187,6 +251,30 @@
   </main>
 
   <footer class="bg-white py-12 text-center border-t border-gray-100">
+    <div class="narrative-col">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-left mb-12">
+            <div>
+                <span class="block font-mono text-[9px] uppercase tracking-widest text-gray-400 mb-2">Top Scorer</span>
+                <span class="font-brand font-bold text-sm">Samu Aghehowa</span>
+                <span class="block text-xs text-gray-500">19 Goals</span>
+            </div>
+            <div>
+                <span class="block font-mono text-[9px] uppercase tracking-widest text-gray-400 mb-2">Creator</span>
+                <span class="font-brand font-bold text-sm">Francisco Moura</span>
+                <span class="block text-xs text-gray-500">13 Assists</span>
+            </div>
+            <div>
+                <span class="block font-mono text-[9px] uppercase tracking-widest text-gray-400 mb-2">Key Signing</span>
+                <span class="font-brand font-bold text-sm">Gabri Veiga</span>
+                <span class="block text-xs text-gray-500">Playmaker</span>
+            </div>
+            <div>
+                <span class="block font-mono text-[9px] uppercase tracking-widest text-gray-400 mb-2">Status</span>
+                <span class="font-brand font-bold text-sm text-green-600">Active</span>
+                <span class="block text-xs text-gray-500">League Leaders</span>
+            </div>
+        </div>
+    </div>
     <span class="font-mono text-[10px] text-gray-300 uppercase tracking-[0.2em]">© 2026 DCP Media / Full Bleed Project</span>
   </footer>
 
