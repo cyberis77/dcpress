@@ -6,165 +6,187 @@
   <title>FULL BLEED | FC Porto: The Farioli Era</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts: IBM Plex (Brand) + Merriweather (Editorial Body) -->
+  <!-- Fonts: IBM Plex (Brand UI) + Merriweather (Storytelling) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&family=IBM+Plex+Mono:wght@400;500&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 
   <style>
     /* Editorial Logic */
-    body { background-color: #fcfcfc; color: #1a1a1a; }
+    body { background-color: #fdfdfd; color: #111; }
     
     /* The Brand Font for UI */
     .font-brand { font-family: 'IBM Plex Sans', sans-serif; }
-    .font-mono { font-family: 'IBM Plex Mono', monospace; }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
     
-    /* The Story Font */
-    .font-editorial { font-family: 'Merriweather', serif; line-height: 1.8; }
+    /* The Story Font - Optimized for reading */
+    .font-editorial { font-family: 'Merriweather', serif; line-height: 1.9; }
 
-    /* Visual pacing */
+    /* Visual pacing: Full screen images */
     .photo-stage {
       height: 90vh;
       width: 100%;
       position: relative;
       margin-bottom: 4rem;
+      overflow: hidden;
     }
     
     .photo-stage img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      /* Subtle parallax effect could go here */
+      /* Default focus is bottom (faces/action), but adjustable per image */
+      object-position: bottom; 
     }
 
-    /* Text constraints for readability */
+    /* Text constraints for readability (Golden Ratio for line width) */
     .narrative-col {
       max-width: 680px;
       margin: 0 auto;
       padding: 0 24px;
     }
     
-    /* Fade in animation */
-    .fade-in { opacity: 0; animation: fadeIn 1.5s forwards; }
+    /* Fade in animation for the title */
+    .fade-in { opacity: 0; animation: fadeIn 2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
     @keyframes fadeIn { to { opacity: 1; } }
+
+    /* Custom Selection Color */
+    ::selection { background: #004d98; color: white; } /* Porto Blue */
   </style>
 </head>
 
-<body class="antialiased selection:bg-black selection:text-white">
+<body class="antialiased">
 
-  <!-- Minimal Header (Branding only, no noise) -->
-  <header class="fixed top-0 left-0 w-full z-50 mix-blend-difference text-white p-6 flex justify-between items-center">
-    <a href="index.html" class="font-brand font-bold tracking-tighter text-xl uppercase italic">
-      DCP<span class="font-normal opacity-70">/FULLBLEED</span>
+  <!-- Minimal Header (Mix-blend-difference allows it to be visible on dark or light images) -->
+  <header class="fixed top-0 left-0 w-full z-50 mix-blend-difference text-white p-6 md:p-10 flex justify-between items-start">
+    <a href="index.html" class="font-brand font-bold tracking-tighter text-xl uppercase italic group">
+      DCP<span class="font-normal opacity-70 group-hover:opacity-100 transition-opacity">/FULLBLEED</span>
     </a>
-    <span class="font-mono text-[10px] uppercase tracking-widest hidden md:block">Volume 01: The Farioli Era</span>
+    <div class="text-right hidden md:block">
+      <span class="block font-mono text-[10px] uppercase tracking-widest">Volume 01</span>
+      <span class="block font-mono text-[10px] uppercase tracking-widest opacity-60">The Farioli Era</span>
+    </div>
   </header>
 
   <main>
 
     <!-- Cover Section -->
     <section class="h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
-      <!-- Background: Farioli Silhouette or Stadium Atmosphere -->
-      <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=2831&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-60 grayscale" alt="Atmosphere">
+      <!-- Background: Atmospheric shot -->
+      <!-- We use a placeholder here for the 'Vibe' before the story starts -->
+      <img src="assets/hero.jpg" class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale" alt="Atmosphere">
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"></div>
       
-      <div class="relative z-10 text-center max-w-2xl px-6 fade-in">
+      <div class="relative z-10 text-center max-w-4xl px-6 fade-in mt-10">
         <span class="block font-mono text-xs text-gray-400 mb-6 uppercase tracking-[0.3em]">Visual Essay</span>
-        <h1 class="font-brand text-5xl md:text-8xl font-bold uppercase tracking-tighter leading-none mb-8">
-          Sixteen<br/><span class="text-gray-500">of</span> Seventeen
+        
+        <h1 class="font-brand text-6xl md:text-9xl font-bold uppercase tracking-tighter leading-[0.85] mb-8">
+          Sixteen<br/><span class="text-white/40 font-light">of</span> Seventeen
         </h1>
-        <p class="font-editorial text-lg md:text-xl text-gray-300 italic font-light">
+        
+        <p class="font-editorial text-lg md:text-2xl text-gray-300 italic font-light max-w-2xl mx-auto">
           In an era of disposable images, we pause to document the architecture of a winning streak.
         </p>
       </div>
       
       <!-- Scroll Indicator -->
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30 animate-pulse">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7"></path></svg>
       </div>
     </section>
 
     <!-- The Manifesto -->
-    <section class="py-24 md:py-32">
+    <section class="py-32 bg-white">
       <div class="narrative-col text-center">
-        <p class="font-editorial text-xl md:text-2xl text-gray-800 font-light leading-relaxed">
-          The modern game is consumed in thumbnails. Highlights are trimmed to ten seconds; emotion is compressed into a GIF. But the story of FC Porto’s 2025/26 season—16 wins in 17 matches—cannot be understood in fast forward. Under Francesco Farioli, the statistics are impressive, but the visuals are undeniable. To understand the dominance, you must look at the silence between the noise.
+        <p class="font-editorial text-xl md:text-2xl text-black font-light leading-relaxed">
+          The modern game is consumed in thumbnails. Highlights are trimmed to ten seconds; emotion is compressed into a GIF. But the story of FC Porto’s 2025/26 season cannot be understood in fast forward. Under Francesco Farioli, the statistics are impressive, but the visuals are undeniable. To understand the dominance, you must look at the silence between the noise.
         </p>
-        <div class="h-[1px] w-20 bg-black mx-auto mt-12"></div>
+        <div class="h-[1px] w-12 bg-black mx-auto mt-16"></div>
       </div>
     </section>
 
     <!-- PHOTO SEQUENCE 1: The Architect -->
-    <article class="mb-32">
-      <figure class="photo-stage">
-        <!-- Image: Farioli on the touchline, intense focus, isolated -->
-        <img src="assets/work1.jpg" alt="Francesco Farioli directing play" class="getty-crop grayscale hover:grayscale-0 transition-all duration-1000">
-        <figcaption class="absolute bottom-4 right-4 text-[10px] font-mono text-white/80 uppercase tracking-widest bg-black/50 px-2 py-1">
-          Estádio do Dragão, Nov 2025
+    <article class="mb-32 md:mb-48">
+      <figure class="photo-stage group cursor-crosshair">
+        <!-- Interaction: Image starts Grayscale, reveals Color on hover -->
+        <img src="assets/work1.jpg" alt="Francesco Farioli directing play" class="grayscale group-hover:grayscale-0 transition-all duration-[1.5s] ease-in-out scale-100 group-hover:scale-105">
+        
+        <!-- Floating Caption -->
+        <figcaption class="absolute bottom-6 left-6 md:left-10 text-white mix-blend-difference z-20">
+          <span class="block text-[10px] font-mono uppercase tracking-[0.3em] mb-1">Fig I.</span>
+          <span class="block font-brand text-sm font-bold uppercase tracking-widest">The Architect</span>
         </figcaption>
       </figure>
 
       <div class="narrative-col">
-        <h3 class="font-mono text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">I. The Architect</h3>
-        <p class="font-editorial text-lg text-gray-800">
+        <h3 class="font-mono text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Estádio do Dragão, Nov 2025</h3>
+        <p class="font-editorial text-lg md:text-xl text-gray-800">
             He stands on the periphery, often motionless in the chaos. Francesco Farioli does not merely spectate; he calibrates. The Italian’s arrival in Porto was met with curiosity, but his methodology has silenced the skeptics. In this frame, the isolation is palpable. The burden of the streak rests here, in the quiet calculation before the whistle. He is building a machine, gear by gear, in plain sight.
         </p>
       </div>
     </article>
 
     <!-- PHOTO SEQUENCE 2: The Spark -->
-    <article class="mb-32">
-      <figure class="photo-stage">
-        <!-- Image: A goal celebration, high motion blur, raw emotion -->
-        <img src="assets/work2.jpg" alt="Goal Celebration" class="object-center grayscale hover:grayscale-0 transition-all duration-1000">
-        <figcaption class="absolute bottom-4 right-4 text-[10px] font-mono text-white/80 uppercase tracking-widest bg-black/50 px-2 py-1">
-          Vítor Bruno, 88th Minute
+    <article class="mb-32 md:mb-48">
+      <figure class="photo-stage group cursor-crosshair">
+        <img src="assets/work2.jpg" alt="Goal Celebration" class="grayscale group-hover:grayscale-0 transition-all duration-[1.5s] ease-in-out scale-100 group-hover:scale-105">
+        
+        <figcaption class="absolute bottom-6 left-6 md:left-10 text-white mix-blend-difference z-20">
+          <span class="block text-[10px] font-mono uppercase tracking-[0.3em] mb-1">Fig II.</span>
+          <span class="block font-brand text-sm font-bold uppercase tracking-widest">The Release</span>
         </figcaption>
       </figure>
 
       <div class="narrative-col">
-        <h3 class="font-mono text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">II. The Release</h3>
-        <p class="font-editorial text-lg text-gray-800">
+        <h3 class="font-mono text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">88th Minute</h3>
+        <p class="font-editorial text-lg md:text-xl text-gray-800">
             When the system yields a result, the tactical discipline evaporates into pure, unadulterated release. This is not just a goal; it is validation. Notice the blur, the distortion of limbs. For ninety minutes, they play within a rigid structure. In this second, the structure breaks. The sound of the Dragão is not heard, but felt. It is a vibration that starts on the grass and ends in the rafters.
         </p>
       </div>
     </article>
 
     <!-- PHOTO SEQUENCE 3: The Connection -->
-    <article class="mb-32">
-      <figure class="photo-stage">
-        <!-- Image: Players running to the bench to hug Farioli -->
-        <img src="assets/work3.jpg" alt="Team hugging the manager" class="getty-crop grayscale hover:grayscale-0 transition-all duration-1000">
-        <figcaption class="absolute bottom-4 right-4 text-[10px] font-mono text-white/80 uppercase tracking-widest bg-black/50 px-2 py-1">
-          The Collective
+    <article class="mb-32 md:mb-48">
+      <figure class="photo-stage group cursor-crosshair">
+        <img src="assets/work3.jpg" alt="Team hugging the manager" class="grayscale group-hover:grayscale-0 transition-all duration-[1.5s] ease-in-out scale-100 group-hover:scale-105">
+        
+        <figcaption class="absolute bottom-6 left-6 md:left-10 text-white mix-blend-difference z-20">
+          <span class="block text-[10px] font-mono uppercase tracking-[0.3em] mb-1">Fig III.</span>
+          <span class="block font-brand text-sm font-bold uppercase tracking-widest">Synchronization</span>
         </figcaption>
       </figure>
 
       <div class="narrative-col">
-        <h3 class="font-mono text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">III. Synchronization</h3>
-        <p class="font-editorial text-lg text-gray-800">
+        <h3 class="font-mono text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">The Collective</h3>
+        <p class="font-editorial text-lg md:text-xl text-gray-800">
             This is the defining image of the campaign. A player, moments after altering the scoreline, seeks out the architect. The barrier between the technical area and the pitch dissolves. Farioli is not a distant general; he is the gravitational center of the squad. In this embrace, you see the transfer of trust. Sixteen wins are not achieved by instruction alone—they are achieved by belief.
         </p>
       </div>
     </article>
 
     <!-- Closing Reflection -->
-    <section class="py-24 bg-gray-50 border-t border-gray-200">
+    <section class="py-24 bg-gray-50 border-t border-gray-100">
       <div class="narrative-col text-center">
-        <p class="font-editorial text-lg text-gray-600 italic mb-10">
+        <p class="font-editorial text-2xl text-gray-500 italic mb-12">
           "The table shows the points. The photograph shows the pulse."
         </p>
-        <p class="font-brand text-sm font-bold uppercase tracking-widest">
-          FC Porto 2025/2026
-        </p>
-        <div class="mt-8">
-           <a href="index.html" class="inline-block border-b border-black pb-1 text-xs font-mono uppercase tracking-widest hover:text-gray-500 transition-colors">Return to Wire</a>
+        
+        <div class="flex flex-col items-center gap-6">
+            <span class="font-brand text-xs font-bold uppercase tracking-widest border border-gray-200 px-4 py-2 bg-white">
+            End of Feature
+            </span>
+            
+            <a href="index.html" class="group flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.2em] text-gray-400 hover:text-black transition-colors mt-8">
+                <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Return to Live Wire
+            </a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="bg-white py-12 text-center">
+  <footer class="bg-white py-12 text-center border-t border-gray-100">
     <span class="font-mono text-[10px] text-gray-300 uppercase tracking-[0.2em]">© 2026 DCP Media / Full Bleed Project</span>
   </footer>
 
