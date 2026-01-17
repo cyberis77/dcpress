@@ -9,92 +9,84 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&family=IBM+Plex+Mono:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&family=IBM+Plex+Mono:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 
   <style>
-    /* Base Aesthetic */
-    body { background-color: #111; color: #fff; }
+    /* Editorial Aesthetic */
+    body { background-color: #ffffff; color: #111; }
     
     .font-brand { font-family: 'IBM Plex Sans', sans-serif; }
     .font-mono { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
-    .font-editorial { font-family: 'Merriweather', serif; line-height: 1.7; }
+    .font-editorial { font-family: 'Merriweather', serif; line-height: 1.9; }
 
-    /* Layout Utility: Sticky Split */
-    .sticky-container {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    @media (min-width: 1024px) {
-      .sticky-container { flex-direction: row; }
-      .sticky-visual {
-        width: 60%;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-        object-fit: cover;
-      }
-      .sticky-content {
-        width: 40%;
-        padding: 6rem 4rem;
-        background: #0a0a0a;
-        min-height: 100vh; /* Ensures scroll */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-    }
-
-    /* Layout Utility: Full Bleed Parallax */
-    .parallax-section {
-      position: relative;
+    /* VISUAL SECTIONS: 100% Full Bleed */
+    .visual-stage {
       height: 100vh;
+      width: 100%;
+      position: relative;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .parallax-bg {
-      position: absolute;
-      inset: 0;
+
+    .visual-stage img {
       width: 100%;
-      height: 120%; /* Taller for parallax movement */
+      height: 100%;
       object-fit: cover;
-      opacity: 0.6;
+      /* Parallax-like slow zoom on hover */
+      transition: transform 3s ease;
+    }
+    .visual-stage:hover img { transform: scale(1.03); }
+
+    /* NARRATIVE SECTIONS: Pure White Space */
+    .narrative-stage {
+      min-height: 60vh; /* Gives plenty of white space */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 6rem 1.5rem;
+      text-align: center;
+    }
+
+    .narrative-content {
+      max-width: 680px;
     }
 
     /* Typography Details */
     .chapter-eyebrow {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.7rem;
-      color: #3b82f6; /* Porto Blue */
+      color: #004d98; /* Porto Blue */
       text-transform: uppercase;
       letter-spacing: 0.25em;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       display: block;
-      font-weight: bold;
+      font-weight: 600;
     }
 
     .drop-cap::first-letter {
       float: left;
       font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 3.5rem;
+      font-size: 4rem;
       line-height: 0.8;
       font-weight: 700;
-      margin-right: 0.75rem;
-      color: #fff;
+      margin-right: 1rem;
+      margin-top: 5px;
+      color: #000;
     }
 
     /* Animations */
-    .fade-in-up { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards 0.5s; }
-    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    .fade-in { opacity: 0; animation: fadeIn 2s forwards; }
+    @keyframes fadeIn { to { opacity: 1; } }
   </style>
 </head>
 
-<body class="antialiased selection:bg-blue-600 selection:text-white">
+<body class="antialiased selection:bg-black selection:text-white">
 
-  <!-- Header -->
+  <!-- Header (Sticky, blends with background) -->
   <header class="fixed top-0 left-0 w-full z-50 p-6 mix-blend-difference text-white flex justify-between items-start pointer-events-none">
     <a href="index.html" class="pointer-events-auto font-brand font-bold tracking-tighter text-xl uppercase italic">
       DCP<span class="font-normal opacity-70">/VISUAL</span>
@@ -107,140 +99,102 @@
 
   <main>
 
-    <!-- 1. HERO: Cinematic Intro -->
-    <section class="h-screen relative flex items-center justify-center overflow-hidden">
-      <img src="assets/hero.jpg" class="absolute inset-0 w-full h-full object-cover opacity-60 grayscale" alt="Cover">
-      <div class="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent"></div>
-      
-      <div class="relative z-10 text-center max-w-4xl px-6">
-        <span class="block font-mono text-xs text-blue-400 mb-6 uppercase tracking-[0.3em] fade-in-up">Strategic Analysis 2025/26</span>
-        <h1 class="font-brand text-5xl md:text-9xl font-bold uppercase tracking-tighter leading-[0.85] mb-8 fade-in-up">
-          The Dragon’s<br/><span class="text-white/40 font-light">Renaissance</span>
+    <!-- 0. HERO (Dark Opening) -->
+    <section class="h-screen relative flex items-center justify-center bg-black overflow-hidden">
+      <img src="assets/hero.jpg" class="absolute inset-0 w-full h-full object-cover opacity-60 grayscale" alt="Atmosphere">
+      <div class="relative z-10 text-center px-6 fade-in">
+        <span class="block font-mono text-xs text-white/60 mb-8 uppercase tracking-[0.4em]">Visual Essay</span>
+        <h1 class="font-brand text-6xl md:text-9xl font-bold text-white uppercase tracking-tighter leading-none mb-8">
+          The<br/>Renaissance
         </h1>
-        <p class="font-editorial text-lg text-gray-300 italic max-w-xl mx-auto fade-in-up">
-          In an era of disposable images, we pause to document the architecture of a winning streak.
+        <p class="font-editorial text-lg text-gray-300 italic max-w-xl mx-auto">
+          The architecture of a new era: How FC Porto redesigned its identity in six months.
         </p>
       </div>
     </section>
 
-
-    <!-- 2. STICKY LAYOUT: The Architecture (Text Right, Image Left) -->
-    <section class="sticky-container border-b border-gray-900">
-      <!-- Sticky Image -->
-      <img src="assets/work1.jpg" class="sticky-visual grayscale hover:grayscale-0 transition-all duration-1000" alt="Farioli">
-      
-      <!-- Scrolling Text -->
-      <div class="sticky-content">
-        <span class="chapter-eyebrow">01 — The Paradigm Shift</span>
-        <h2 class="font-brand text-3xl font-bold mb-6 leading-tight">The End of the Monolith</h2>
-        
-        <div class="font-editorial text-gray-300 text-lg space-y-6">
-          <p class="drop-cap">
-            The 2025/2026 season marks a seismic shift. Following the historic election of André Villas-Boas—ending a 42-year presidency—the club embarked on aggressive modernization.
-          </p>
-          <p>
-            Francesco Farioli, 36, is the visual representation of this new era. A disciple of the aesthetic school, his mandate was to marry Porto's historical dominance with a sophisticated brand of football capable of valorizing assets in a volatile market.
-          </p>
-          
-          <div class="py-8 border-y border-gray-800 mt-8">
-            <span class="block font-mono text-xs text-gray-500 uppercase tracking-widest mb-2">Key Statistic</span>
-            <span class="font-brand text-4xl font-bold text-white">16 of 17</span>
-            <span class="block font-editorial text-sm italic text-gray-400 mt-1">League Victories</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- 3. FULL BLEED: Tactical Breakdown -->
-    <section class="parallax-section">
-      <img src="assets/work2.jpg" class="parallax-bg brightness-50" alt="Tactics">
-      
-      <div class="relative z-10 max-w-3xl px-6 text-center">
-        <span class="chapter-eyebrow text-center mx-auto mb-4">02 — Fariolismo</span>
-        <h2 class="font-brand text-4xl md:text-6xl font-bold mb-8 leading-tight">"Press-Baiting" &<br/>Total Control</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left bg-black/50 backdrop-blur-md p-8 border border-white/10">
-          <div>
-            <h4 class="font-mono text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">The Build-Up</h4>
-            <p class="font-editorial text-sm text-gray-300">
-              Unlike the verticality of the past, Farioli’s team stands still with the ball, baiting the press before exploiting the space behind with rapid combinations.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-mono text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">The Sweeper</h4>
-            <p class="font-editorial text-sm text-gray-300">
-              Diogo Costa has evolved into an 11th outfield player, operating outside his box to sustain the high line.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- 4. STICKY LAYOUT: The Spearhead (Text Left, Image Right) -->
-    <!-- Use 'flex-row-reverse' to swap sides on desktop -->
-    <section class="sticky-container border-b border-gray-900" style="flex-direction: row-reverse;">
-      
-      <img src="assets/work3.jpg" class="sticky-visual grayscale hover:grayscale-0 transition-all duration-1000" alt="Samu Goal" style="object-position: top;">
-      
-      <div class="sticky-content bg-[#111]">
-        <span class="chapter-eyebrow">03 — The Spearhead</span>
-        <h2 class="font-brand text-3xl font-bold mb-6 leading-tight">Ruthless Efficiency</h2>
-        
-        <div class="font-editorial text-gray-300 text-lg space-y-6">
-          <p>
-            At the tip of the spear is <strong>Samu Aghehowa</strong>. The signing has been a masterstroke, with the Spaniard netting <span class="text-white border-b border-blue-600">19 goals</span> in all competitions.
-          </p>
-          <p>
-            While the build-up is complex, the outcome is simple. Samu provides the physical presence to occupy center-backs, allowing creators like Gabri Veiga to flourish in the pockets of space created by the system.
-          </p>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- 5. CENTERPIECE: La Famiglia Portista -->
-    <section class="relative py-24 bg-[#050505] text-center border-b border-gray-900">
-      <div class="max-w-4xl mx-auto px-6 mb-12">
-        <span class="chapter-eyebrow text-center mx-auto mb-4">04 — The Collective Pulse</span>
-        <h2 class="font-brand text-5xl md:text-7xl font-bold mb-6 text-white">La Famiglia Portista</h2>
-        <p class="font-editorial text-xl text-gray-400 leading-relaxed">
-          "When the net ripples, the tactical geometry dissolves. The goal celebrations in this era are distinct—magnetic collisions of bodies that gravitate toward the touchline."
+    <!-- 1. TEXT: Introduction -->
+    <section class="narrative-stage">
+      <div class="narrative-content">
+        <span class="chapter-eyebrow">01 — The Shift</span>
+        <h2 class="font-brand text-3xl md:text-5xl font-bold mb-8 leading-tight">A New Architecture</h2>
+        <p class="font-editorial text-xl text-gray-800 leading-relaxed text-left">
+          <span class="drop-cap">T</span>he 2025/2026 season marks a seismic shift. Following the historic election of André Villas-Boas—ending a 42-year presidency—the club embarked on aggressive modernization. At the center stands Francesco Farioli. At 36, the Italian tactician represents the antithesis of the old regime—a philosopher tasked with marrying historical dominance with a modern aesthetic.
         </p>
       </div>
+    </section>
 
-      <!-- Wide Cinematic Image -->
-      <div class="w-full h-[80vh] overflow-hidden relative group">
-        <img src="assets/work1.jpg" class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-[2s]" alt="Unity">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+    <!-- 2. PHOTO: The Architect -->
+    <section class="visual-stage">
+      <img src="assets/work1.jpg" class="grayscale hover:grayscale-0 transition-all duration-1000" alt="Farioli">
+      <div class="absolute bottom-8 left-8 text-white mix-blend-difference">
+         <span class="font-mono text-xs uppercase tracking-widest">Fig I. The Architect</span>
+      </div>
+    </section>
+
+    <!-- 3. TEXT: Tactics -->
+    <section class="narrative-stage">
+      <div class="narrative-content">
+        <span class="chapter-eyebrow">02 — Fariolismo</span>
+        <h2 class="font-brand text-3xl md:text-5xl font-bold mb-8 leading-tight">Control & Chaos</h2>
+        <p class="font-editorial text-xl text-gray-800 leading-relaxed text-left">
+          The tactical identity is built on nerve. Farioli’s Porto seeks to hold the ball in deep zones, baiting the opponent to press before exploiting the space behind. It is a high-wire act that has yielded the best defensive record in the country. With 65% average possession, they do not just win; they suffocate.
+        </p>
         
-        <div class="absolute bottom-10 left-10 text-left">
-           <p class="font-mono text-xs uppercase tracking-widest text-white mb-2">Fig III. Synchronization</p>
-           <p class="font-editorial text-sm text-gray-400 max-w-md">Farioli is rarely a distant observer; he is engulfed in the collective. This physical connection demonstrates that wins are not achieved by instruction alone.</p>
+        <!-- Minimal Data Point -->
+        <div class="mt-12 pt-8 border-t border-gray-200 grid grid-cols-2 gap-8 text-center">
+            <div>
+                <span class="block font-brand text-3xl font-bold">16/17</span>
+                <span class="text-[10px] font-mono uppercase tracking-widest text-gray-500">Wins</span>
+            </div>
+            <div>
+                <span class="block font-brand text-3xl font-bold">65%</span>
+                <span class="text-[10px] font-mono uppercase tracking-widest text-gray-500">Possession</span>
+            </div>
         </div>
       </div>
     </section>
 
+    <!-- 4. PHOTO: Action/Samu -->
+    <section class="visual-stage">
+      <img src="assets/work2.jpg" class="grayscale hover:grayscale-0 transition-all duration-1000" alt="Samu Action" style="object-position: top center;">
+      <div class="absolute bottom-8 left-8 text-white mix-blend-difference">
+         <span class="font-mono text-xs uppercase tracking-widest">Fig II. The Release</span>
+      </div>
+    </section>
 
-    <!-- 6. CONCLUSION -->
-    <section class="h-[60vh] flex flex-col items-center justify-center bg-white text-black text-center px-6">
-      <span class="chapter-eyebrow text-black mb-4">05 — The Horizon</span>
+    <!-- 5. TEXT: The Collective -->
+    <section class="narrative-stage">
+      <div class="narrative-content">
+        <span class="chapter-eyebrow">03 — La Famiglia Portista</span>
+        <h2 class="font-brand text-3xl md:text-5xl font-bold mb-8 leading-tight">Gravitational Center</h2>
+        <p class="font-editorial text-xl text-gray-800 leading-relaxed text-left">
+          When the net ripples, the tactical geometry dissolves. The goal celebrations in this era are distinct—magnetic collisions of bodies that gravitate toward the touchline. Farioli is rarely a distant observer; he is often engulfed in the collective. This physical connection demonstrates that wins are not achieved by instruction alone, but by a unified pulse.
+        </p>
+      </div>
+    </section>
+
+    <!-- 6. PHOTO: Unity/Huddle -->
+    <section class="visual-stage">
+      <img src="assets/work3.jpg" class="grayscale hover:grayscale-0 transition-all duration-1000" alt="Unity">
+      <div class="absolute bottom-8 left-8 text-white mix-blend-difference">
+         <span class="font-mono text-xs uppercase tracking-widest">Fig III. Synchronization</span>
+      </div>
+    </section>
+
+    <!-- 7. OUTRO: Quote -->
+    <section class="h-[80vh] flex flex-col items-center justify-center bg-white text-center px-6">
       
-      <p class="font-editorial text-2xl md:text-4xl italic mb-12 max-w-3xl leading-snug">
-        "The table shows the points.<br/>The photograph shows the pulse."
+      <p class="font-editorial text-3xl md:text-5xl italic mb-16 max-w-4xl leading-tight text-gray-900">
+        "The table shows the points.<br/><span class="text-gray-400">The photograph shows the pulse."</span>
       </p>
       
-      <div class="flex flex-col items-center gap-6">
-        <p class="font-mono text-[10px] uppercase tracking-widest text-gray-500">FC Porto: 1st Place / 49 Points</p>
-        
-        <a href="index.html" class="group flex items-center gap-4 border border-black px-8 py-4 uppercase tracking-[0.2em] font-bold text-xs hover:bg-black hover:text-white transition-all">
-          <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-          Return to Wire
-        </a>
-      </div>
+      <a href="index.html" class="group flex items-center gap-4 border border-black px-10 py-5 uppercase tracking-[0.2em] font-bold text-xs hover:bg-black hover:text-white transition-all">
+        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+        Return to Wire
+      </a>
       
-      <div class="mt-20 font-mono text-[10px] text-gray-400 uppercase tracking-widest">
+      <div class="mt-24 font-mono text-[10px] text-gray-300 uppercase tracking-widest">
         © 2026 DCP Media / Special Feature
       </div>
     </section>
