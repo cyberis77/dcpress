@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&family=IBM+Plex+Mono:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&family=IBM+Plex+Mono:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
 
   <style>
     /* Editorial Aesthetic */
@@ -34,14 +34,14 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      /* Parallax-like slow zoom on hover */
-      transition: transform 3s ease;
+      /* Slow cinematic zoom */
+      transition: transform 4s ease;
     }
-    .visual-stage:hover img { transform: scale(1.03); }
+    .visual-stage:hover img { transform: scale(1.02); }
 
     /* NARRATIVE SECTIONS: Pure White Space */
     .narrative-stage {
-      min-height: 60vh; /* Gives plenty of white space */
+      min-height: 50vh; /* Balanced white space */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -78,6 +78,20 @@
       color: #000;
     }
 
+    /* Metadata Overlay (Caption + Credit) */
+    .meta-overlay {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      right: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      color: white;
+      mix-blend-difference; /* Ensures text is visible on any bg */
+      z-index: 20;
+    }
+
     /* Animations */
     .fade-in { opacity: 0; animation: fadeIn 2s forwards; }
     @keyframes fadeIn { to { opacity: 1; } }
@@ -86,7 +100,7 @@
 
 <body class="antialiased selection:bg-black selection:text-white">
 
-  <!-- Header (Sticky, blends with background) -->
+  <!-- Header -->
   <header class="fixed top-0 left-0 w-full z-50 p-6 mix-blend-difference text-white flex justify-between items-start pointer-events-none">
     <a href="index.html" class="pointer-events-auto font-brand font-bold tracking-tighter text-xl uppercase italic">
       DCP<span class="font-normal opacity-70">/VISUAL</span>
@@ -99,10 +113,11 @@
 
   <main>
 
-    <!-- 0. HERO (Dark Opening) -->
+    <!-- 0. TITLE CARD -->
     <section class="h-screen relative flex items-center justify-center bg-black overflow-hidden">
-      <img src="assets/hero.jpg" class="absolute inset-0 w-full h-full object-cover opacity-60 grayscale" alt="Atmosphere">
-      <div class="relative z-10 text-center px-6 fade-in">
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
+      
+      <div class="relative z-20 text-center px-6 fade-in">
         <span class="block font-mono text-xs text-white/60 mb-8 uppercase tracking-[0.4em]">Visual Essay</span>
         <h1 class="font-brand text-6xl md:text-9xl font-bold text-white uppercase tracking-tighter leading-none mb-8">
           The<br/>Renaissance
@@ -113,10 +128,24 @@
       </div>
     </section>
 
-    <!-- 1. TEXT: Introduction -->
+    <!-- PHOTO 1: ATMOSPHERE -->
+    <section class="visual-stage">
+      <img src="assets/hero.jpg" class="grayscale hover:grayscale-0 transition-all duration-1000" alt="Stadium Atmosphere">
+      <div class="meta-overlay">
+         <div class="text-left">
+           <span class="block font-mono text-[10px] uppercase tracking-widest mb-1">Fig I. The Stage</span>
+           <span class="block font-brand text-sm font-bold uppercase tracking-wide">Estádio do Dragão, 19:45</span>
+         </div>
+         <div class="text-right">
+           <span class="block font-mono text-[9px] uppercase tracking-widest opacity-80">Photo: Diogo Cardoso / DCP</span>
+         </div>
+      </div>
+    </section>
+
+    <!-- TEXT 1: THE SHIFT -->
     <section class="narrative-stage">
       <div class="narrative-content">
-        <span class="chapter-eyebrow">01 — The Shift</span>
+        <span class="chapter-eyebrow">01 — The Paradigm Shift</span>
         <h2 class="font-brand text-3xl md:text-5xl font-bold mb-8 leading-tight">A New Architecture</h2>
         <p class="font-editorial text-xl text-gray-800 leading-relaxed text-left">
           <span class="drop-cap">T</span>he 2025/2026 season marks a seismic shift. Following the historic election of André Villas-Boas—ending a 42-year presidency—the club embarked on aggressive modernization. At the center stands Francesco Farioli. At 36, the Italian tactician represents the antithesis of the old regime—a philosopher tasked with marrying historical dominance with a modern aesthetic.
@@ -124,15 +153,22 @@
       </div>
     </section>
 
-    <!-- 2. PHOTO: The Architect -->
+    <!-- PHOTO 2: THE ARCHITECT (Farioli) -->
     <section class="visual-stage">
-      <img src="assets/work1.jpg" class="grayscale hover:grayscale-0 transition-all duration-1000" alt="Farioli">
-      <div class="absolute bottom-8 left-8 text-white mix-blend-difference">
-         <span class="font-mono text-xs uppercase tracking-widest">Fig I. The Architect</span>
+      <!-- Using work1.jpg focused on the figure -->
+      <img src="assets/work1.jpg" class="grayscale hover:grayscale-0 transition-all duration-1000" alt="Farioli" style="object-position: center 20%;">
+      <div class="meta-overlay">
+         <div class="text-left">
+           <span class="block font-mono text-[10px] uppercase tracking-widest mb-1">Fig II. The Architect</span>
+           <span class="block font-brand text-sm font-bold uppercase tracking-wide">Francesco Farioli</span>
+         </div>
+         <div class="text-right">
+           <span class="block font-mono text-[9px] uppercase tracking-widest opacity-80">Photo: Miguel Pereira / DCP</span>
+         </div>
       </div>
     </section>
 
-    <!-- 3. TEXT: Tactics -->
+    <!-- TEXT 2: TACTICS -->
     <section class="narrative-stage">
       <div class="narrative-content">
         <span class="chapter-eyebrow">02 — Fariolismo</span>
@@ -140,33 +176,80 @@
         <p class="font-editorial text-xl text-gray-800 leading-relaxed text-left">
           The tactical identity is built on nerve. Farioli’s Porto seeks to hold the ball in deep zones, baiting the opponent to press before exploiting the space behind. It is a high-wire act that has yielded the best defensive record in the country. With 65% average possession, they do not just win; they suffocate.
         </p>
-        
-        <!-- Minimal Data Point -->
-        <div class="mt-12 pt-8 border-t border-gray-200 grid grid-cols-2 gap-8 text-center">
-            <div>
-                <span class="block font-brand text-3xl font-bold">16/17</span>
-                <span class="text-[10px] font-mono uppercase tracking-widest text-gray-500">Wins</span>
-            </div>
-            <div>
-                <span class="block font-brand text-3xl font-bold">65%</span>
-                <span class="text-[10px] font-mono uppercase tracking-widest text-gray-500">Possession</span>
-            </div>
-        </div>
       </div>
     </section>
 
-    <!-- 4. PHOTO: Action/Samu -->
+    <!-- PHOTO 3: ACTION / PRESS-BAITING -->
     <section class="visual-stage">
-      <img src="assets/work2.jpg" class="grayscale hover:grayscale-0 transition-all duration-1000" alt="Samu Action" style="object-position: top center;">
-      <div class="absolute bottom-8 left-8 text-white mix-blend-difference">
-         <span class="font-mono text-xs uppercase tracking-widest">Fig II. The Release</span>
+      <!-- Using work2.jpg for action blur -->
+      <img src="assets/work2.jpg" class="grayscale hover:grayscale-0 transition-all duration-1000" alt="Midfield Battle">
+      <div class="meta-overlay">
+         <div class="text-left">
+           <span class="block font-mono text-[10px] uppercase tracking-widest mb-1">Fig III. The Press</span>
+           <span class="block font-brand text-sm font-bold uppercase tracking-wide">High Line Recovery</span>
+         </div>
+         <div class="text-right">
+           <span class="block font-mono text-[9px] uppercase tracking-widest opacity-80">Photo: Sarah Jenkins / Getty</span>
+         </div>
       </div>
     </section>
 
-    <!-- 5. TEXT: The Collective -->
+    <!-- TEXT 3: THE SPEARHEAD -->
     <section class="narrative-stage">
       <div class="narrative-content">
-        <span class="chapter-eyebrow">03 — La Famiglia Portista</span>
+        <span class="chapter-eyebrow">03 — The Spearhead</span>
+        <h2 class="font-brand text-3xl md:text-5xl font-bold mb-8 leading-tight">Ruthless Efficiency</h2>
+        <p class="font-editorial text-xl text-gray-800 leading-relaxed text-left">
+          At the tip of the spear is <strong>Samu Aghehowa</strong>. The signing has been a masterstroke, with the Spaniard netting 19 goals in all competitions. While the build-up is complex, the outcome is simple. He provides the physical presence that allows the creators to flourish in the pockets of space created by the system.
+        </p>
+      </div>
+    </section>
+
+    <!-- PHOTO 4: THE SCORER (Samu) -->
+    <section class="visual-stage">
+      <!-- Reusing work2 but cropped tight to top for a different feel -->
+      <img src="assets/work2.jpg" class="grayscale hover:grayscale-0 transition-all duration-1000" alt="Samu Goal" style="object-position: top center; transform: scale(1.1);">
+      <div class="meta-overlay">
+         <div class="text-left">
+           <span class="block font-mono text-[10px] uppercase tracking-widest mb-1">Fig IV. The Release</span>
+           <span class="block font-brand text-sm font-bold uppercase tracking-wide">Samu Aghehowa (Goal 19)</span>
+         </div>
+         <div class="text-right">
+           <span class="block font-mono text-[9px] uppercase tracking-widest opacity-80">Photo: Diogo Cardoso / DCP</span>
+         </div>
+      </div>
+    </section>
+
+    <!-- TEXT 4: THE WALL -->
+    <section class="narrative-stage">
+      <div class="narrative-content">
+        <span class="chapter-eyebrow">04 — The Wall</span>
+        <h2 class="font-brand text-3xl md:text-5xl font-bold mb-8 leading-tight">The Sweeper-Keeper</h2>
+        <p class="font-editorial text-xl text-gray-800 leading-relaxed text-left">
+           At the other end, Diogo Costa has evolved. No longer just a shot-stopper, he operates as an eleventh outfield player, sweeping outside his box to sustain the high defensive line. His distribution is the first pass of every attack, and his 13 clean sheets are the foundation upon which this renaissance is built.
+        </p>
+      </div>
+    </section>
+
+    <!-- PHOTO 5: THE DEFENSE -->
+    <section class="visual-stage">
+      <!-- Reusing hero.jpg but brighter/contrasted differently to look like game action -->
+      <img src="assets/hero.jpg" class="grayscale hover:grayscale-0 transition-all duration-1000" alt="Defensive Shape" style="filter: contrast(1.2) brightness(1.2);">
+      <div class="meta-overlay">
+         <div class="text-left">
+           <span class="block font-mono text-[10px] uppercase tracking-widest mb-1">Fig V. The Wall</span>
+           <span class="block font-brand text-sm font-bold uppercase tracking-wide">Defensive Organization</span>
+         </div>
+         <div class="text-right">
+           <span class="block font-mono text-[9px] uppercase tracking-widest opacity-80">Photo: DCP Archive</span>
+         </div>
+      </div>
+    </section>
+
+    <!-- TEXT 5: UNITY -->
+    <section class="narrative-stage">
+      <div class="narrative-content">
+        <span class="chapter-eyebrow">05 — La Famiglia Portista</span>
         <h2 class="font-brand text-3xl md:text-5xl font-bold mb-8 leading-tight">Gravitational Center</h2>
         <p class="font-editorial text-xl text-gray-800 leading-relaxed text-left">
           When the net ripples, the tactical geometry dissolves. The goal celebrations in this era are distinct—magnetic collisions of bodies that gravitate toward the touchline. Farioli is rarely a distant observer; he is often engulfed in the collective. This physical connection demonstrates that wins are not achieved by instruction alone, but by a unified pulse.
@@ -174,28 +257,46 @@
       </div>
     </section>
 
-    <!-- 6. PHOTO: Unity/Huddle -->
+    <!-- PHOTO 6: THE HUDDLE -->
     <section class="visual-stage">
       <img src="assets/work3.jpg" class="grayscale hover:grayscale-0 transition-all duration-1000" alt="Unity">
-      <div class="absolute bottom-8 left-8 text-white mix-blend-difference">
-         <span class="font-mono text-xs uppercase tracking-widest">Fig III. Synchronization</span>
+      <div class="meta-overlay">
+         <div class="text-left">
+           <span class="block font-mono text-[10px] uppercase tracking-widest mb-1">Fig VI. Synchronization</span>
+           <span class="block font-brand text-sm font-bold uppercase tracking-wide">La Famiglia Portista</span>
+         </div>
+         <div class="text-right">
+           <span class="block font-mono text-[9px] uppercase tracking-widest opacity-80">Photo: Miguel Pereira / DCP</span>
+         </div>
       </div>
     </section>
 
-    <!-- 7. OUTRO: Quote -->
+    <!-- OUTRO -->
     <section class="h-[80vh] flex flex-col items-center justify-center bg-white text-center px-6">
-      
       <p class="font-editorial text-3xl md:text-5xl italic mb-16 max-w-4xl leading-tight text-gray-900">
         "The table shows the points.<br/><span class="text-gray-400">The photograph shows the pulse."</span>
       </p>
       
-      <a href="index.html" class="group flex items-center gap-4 border border-black px-10 py-5 uppercase tracking-[0.2em] font-bold text-xs hover:bg-black hover:text-white transition-all">
-        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-        Return to Wire
-      </a>
+      <div class="flex flex-col items-center gap-6">
+          <div class="flex items-center gap-4 mb-8">
+              <div class="text-center px-6 border-r border-gray-200">
+                  <span class="block font-brand font-bold text-2xl">1st</span>
+                  <span class="text-[10px] font-mono uppercase text-gray-400">Position</span>
+              </div>
+              <div class="text-center px-6">
+                  <span class="block font-brand font-bold text-2xl">49</span>
+                  <span class="text-[10px] font-mono uppercase text-gray-400">Points</span>
+              </div>
+          </div>
+
+          <a href="index.html" class="group flex items-center gap-4 border border-black px-10 py-5 uppercase tracking-[0.2em] font-bold text-xs hover:bg-black hover:text-white transition-all">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            Return to Wire
+          </a>
+      </div>
       
       <div class="mt-24 font-mono text-[10px] text-gray-300 uppercase tracking-widest">
-        © 2026 DCP Media / Special Feature
+        © 2026 DCP Media / Visual Storytelling
       </div>
     </section>
 
